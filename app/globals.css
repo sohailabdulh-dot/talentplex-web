@@ -192,3 +192,13 @@ header nav[aria-label="Primary"] .nav-link:focus-visible span { color:#E3131B; }
 header > div > div { background:rgba(13,14,16,.94) !important; border-color:rgba(255,255,255,.10) !important; }
 header nav[aria-label="Primary"] .cta-primary { font-family:var(--font-inter),Inter,sans-serif; font-size:14px; font-weight:600; background:#E3131B !important; }
 header nav[aria-label="Primary"] .cta-primary:hover { background:#B20F17 !important; }
+
+/* Homepage capability cards only. */
+.capability-link { color:inherit; }
+.capability-link .capability-arrow { transition:transform .2s ease,color .2s ease; }
+.capability-link:hover .capability-arrow,.capability-link:focus-visible .capability-arrow { color:#E3131B !important; transform:translate(2px,-2px); }
+.capability-link .capability-card { box-shadow:0 16px 36px rgba(13,14,16,.06); }
+.capability-link:hover .capability-card,.capability-link:focus-visible .capability-card { box-shadow:0 20px 44px rgba(13,14,16,.12); }
+.capability-technology h3,.capability-products h3 { color:#fff !important; }
+.capability-technology p,.capability-products p { color:#D7D9DE !important; }
+.capability-technology .tag,.capability-products .tag { color:#D7D9DE !important; border-color:rgba(255,255,255,.16) !important; background:rgba(255,255,255,.06) !important; }
