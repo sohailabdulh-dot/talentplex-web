@@ -1,0 +1,14 @@
+import crypto from 'node:crypto';
+import { Pool } from 'pg';
+
+export const inquiryTypes = ['WEBSITE', 'SOFTWARE', 'RECRUITMENT', 'NIMBUSSOS', 'STAFFING_LAUNCH', 'OTHER'] as const;
+export type ContactInput = { name: string; workEmail: string; company?: string; phone?: string; inquiryType: string; message: string; website?: string };
+const attempts = new Map<string, number[]>();
+let pool: Pool | undefined;
+
+function getPool() { if (!process.env.TALENTPLEX_DATABASE_URL) throw new Error('TalentPlex database is not configured'); return pool ??= new Pool({ connectionString: process.env.TALENTPLEX_DATABASE_URL, max: 3, idleTimeoutMillis: 10000 }); }
+export function clientIp(request: Request) { return request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || ''; }
+export function hashIp(ip: string) { if (!ip || !process.env.TALENTPLEX_IP_HASH_SALT) return null; return crypto.createHash('sha256').update(`${process.env.TALENTPLEX_IP_HASH_SALT}:${ip}`).digest('hex'); }
+export function validateContact(input: ContactInput) { const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (!input.name?.trim() || input.name.length > 120) return 'Please enter your name.'; if (!email.test(input.workEmail) || input.workEmail.length > 254) return 'Please enter a valid work email.'; if ((input.company ?? '').length > 160 || (input.phone ?? '').length > 40) return 'One of the fields is too long.'; if (!inquiryTypes.includes(input.inquiryType as never)) return 'Please choose a valid inquiry type.'; if (!input.message?.trim() || input.message.length < 10 || input.message.length > 5000) return 'Please enter a message between 10 and 5000 characters.'; return null; }
+export function isRateLimited(key: string) { const now = Date.now(); const recent = (attempts.get(key) ?? []).filter((time) => now - time < 15 * 60 * 1000); if (recent.length >= 5) { attempts.set(key, recent); return true; } recent.push(now); attempts.set(key, recent); return false; }
+export async function saveContact(input: ContactInput, request: Request) { const ipHash = hashIp(clientIp(request)); await getPool().query('insert into contact_submissions (name, work_email, company, phone, inquiry_type, message, ip_hash, user_agent) values ($1,$2,$3,$4,$5,$6,$7,$8)', [input.name.trim(), input.workEmail.trim().toLowerCase(), input.company?.trim() || null, input.phone?.trim() || null, input.inquiryType, input.message.trim(), ipHash, request.headers.get('user-agent')?.slice(0, 512) || null]); }
