@@ -274,3 +274,137 @@ header nav[aria-label="Primary"] .cta-primary:hover { background:#B20F17 !import
   .capability-home-section { padding:52px 0 !important; }
   .capability-home-section .capability-card { min-height:auto; }
 }
+
+
+/* Homepage build selector: readable, compact and aligned with service architecture. */
+.build-selector-section {
+  padding:76px 0 !important;
+  background:
+    radial-gradient(circle at 88% 68%,rgba(178,15,23,.22),transparent 28%),
+    linear-gradient(145deg,#0D0E10 0%,#17181B 62%,#17181B 100%) !important;
+  color:#fff !important;
+}
+.build-selector-section .eyebrow {
+  color:#FF2935 !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+.build-selector-section h2 {
+  color:#fff !important;
+  line-height:1.04;
+}
+.build-selector-section .build-accent {
+  color:#FF2935 !important;
+  -webkit-text-fill-color:#FF2935 !important;
+  background:none !important;
+}
+.build-selector-intro {
+  color:#C9CBD1 !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+}
+.build-selector-section .build-tab {
+  min-height:64px;
+  padding:0 18px;
+  background:#1C1D21 !important;
+  border:1px solid #3A3C42 !important;
+  color:#F3F4F6 !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:14px;
+  font-weight:600;
+}
+.build-selector-section .build-tab .text-mist {
+  color:#A7AAB2 !important;
+  font-size:11px;
+  font-weight:600;
+}
+.build-selector-section .build-tab:hover,
+.build-selector-section .build-tab:focus-visible {
+  background:#23252A !important;
+  border-color:#666A73 !important;
+  color:#fff !important;
+}
+.build-selector-section .build-tab.tab-active {
+  background:linear-gradient(145deg,#E3131B,#B20F17) !important;
+  border-color:#FF2935 !important;
+  color:#fff !important;
+  box-shadow:0 12px 28px rgba(178,15,23,.24) !important;
+}
+.build-selector-section .build-tab.tab-active .text-mist {
+  color:#fff !important;
+}
+.build-selector-section .build-selector-panel {
+  background:#1B1C20 !important;
+  border-color:#404249 !important;
+  color:#fff !important;
+  box-shadow:0 22px 55px rgba(0,0,0,.28) !important;
+}
+.build-selector-section .build-selector-panel .eyebrow {
+  color:#FF2935 !important;
+}
+.build-selector-section .build-selector-panel h3 {
+  color:#fff !important;
+  font-size:clamp(2rem,3.5vw,3.4rem);
+  line-height:1.05;
+}
+.build-selector-section .build-selector-panel > p {
+  color:#D7D9DE !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:15px;
+  line-height:1.7;
+}
+.build-selector-section .process-flow {
+  margin-top:24px;
+}
+.build-selector-section .process-flow > span {
+  color:#B8BAC1 !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+}
+.build-selector-section .process-flow > span > span:first-child {
+  background:#25262A !important;
+  border-color:#50525A !important;
+  color:#F3F4F6 !important;
+  padding:7px 10px;
+  font-size:11px;
+  font-weight:600;
+}
+.build-selector-section .selector-visual {
+  margin-top:24px !important;
+  background:#111216 !important;
+  border-color:#35373D !important;
+  color:#fff !important;
+}
+.build-selector-section .selector-visual .text-mist {
+  color:#AEB1B8 !important;
+}
+.build-selector-section .selector-visual .text-brandBright {
+  color:#FF2935 !important;
+}
+.build-selector-section .selector-visual .bg-brand\/25 {
+  background:rgba(227,19,27,.18) !important;
+  color:#F8F8F9 !important;
+}
+.build-selector-section .selector-visual .border-white\/10 {
+  border-color:#34363C !important;
+}
+.build-selector-section .selector-visual .bg-white\/5 {
+  background:#23252A !important;
+}
+.build-selector-section .cta-primary {
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  min-height:46px;
+}
+@media (max-width:1023px) {
+  .build-selector-section .build-tab { min-width:210px; }
+}
+@media (max-width:700px) {
+  .build-selector-section { padding:56px 0 !important; }
+  .build-selector-section .build-selector-panel { padding:24px !important; }
+  .build-selector-section .build-tab { min-width:190px; }
+  .build-selector-intro { font-size:15px; }
+}
