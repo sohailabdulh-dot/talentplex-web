@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export const routeLinks = {
-  Services: [['Digital', '/services/digital'], ['Technology', '/services/technology'], ['Recruitment', '/services/recruitment'], ['Recruitment Websites', '/services/recruitment-websites']],
+  Services: [['Digital', '/services/digital'], ['Technology', '/services/technology'], ['Recruitment Services', '/services/recruitment']],
   Solutions: [['Custom Software', '/solutions/custom-software'], ['Recruitment Technology', '/solutions/recruitment-technology'], ['Staffing Launch', '/solutions/staffing-launch'], ['Automation', '/solutions/automation']],
   Products: [['NimbussOS', '/products/nimbussos']],
 };
