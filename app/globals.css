@@ -171,3 +171,9 @@ a[aria-label="TalentPlex home"] { display:inline-flex; align-items:center; borde
 .tab-active,.plum-section .tab-active { background:linear-gradient(145deg,#E3131B,#B20F17) !important; border-color:#D9141C !important; box-shadow:inset 0 -5px 14px rgba(118,8,14,.3) !important; }
 .form-field:focus { border-color:#E3131B !important; box-shadow:0 0 0 3px rgba(227,19,27,.14) !important; }
 .hero-section { background:radial-gradient(circle at 78% 12%,rgba(178,15,23,.16),transparent 28%),linear-gradient(145deg,#0D0E10 0%,#17181B 58%,#202126 100%) !important; }
+
+/* Light mega-menu content stays readable instead of inheriting dark-header hover colors. */
+header .glass a { color:#17181B !important; font-weight:500; }
+header .glass a:hover,
+header .glass a:focus-visible { color:#0D0E10 !important; font-weight:700; background:rgba(227,19,27,.05) !important; }
+header .glass a[aria-current="page"] { color:#E3131B !important; font-weight:700; }
