@@ -408,3 +408,25 @@ header nav[aria-label="Primary"] .cta-primary:hover { background:#B20F17 !import
   .build-selector-section .build-tab { min-width:190px; }
   .build-selector-intro { font-size:15px; }
 }
+
+
+/* Capability grid alignment fix. */
+.capability-home-section .grid > div { height:100%; }
+.capability-home-section .capability-link { height:100%; }
+.capability-home-section .capability-card {
+  height:100%;
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+}
+.capability-home-section .capability-card h3 {
+  min-height:2.2em;
+}
+.capability-home-section .capability-card p {
+  min-height:3.25em;
+}
+@media (max-width:700px) {
+  .capability-home-section .capability-card,
+  .capability-home-section .capability-card h3,
+  .capability-home-section .capability-card p { min-height:0; }
+}
