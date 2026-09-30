@@ -19,12 +19,140 @@ const pages: Record<string, { eyebrow: string; title: React.ReactNode; copy: str
   work: { eyebrow: 'WORK', title: 'Things we&apos;re building.', copy: 'Honest product, concept and system work from the TalentPlex team.', items: ['NimbussOS — Internal Product', 'Recruitment Brand System — TalentPlex Concept', 'Staffing Workflow — System Concept'] },
   company: { eyebrow: 'COMPANY', title: 'TalentPlex exists at the intersection of technology and talent.', copy: 'We bring digital craft, technical thinking and recruitment understanding together to make progress practical.', items: ['Clarity', 'Ownership', 'Craft', 'Practicality', 'Progress'] },
   contact: { eyebrow: 'CONTACT', title: <>Let&apos;s talk about<br /><span className="gradient-text">what you&apos;re building.</span></>, copy: 'Tell us what you are trying to build, hire or make possible.' },
+  privacy: { eyebrow: 'PRIVACY', title: 'Privacy Statement', copy: 'How TalentPlex Global LLC collects, uses and protects information submitted through this website.' },
 };
 
 const recruitmentIndustries = ['Engineering', 'Manufacturing', 'Construction', 'Automotive', 'Energy', 'Supply Chain & Logistics', 'Technology', 'Finance & Accounting', 'Healthcare', 'Professional Services'];
 
-const seoTitles: Record<string, string> = { services: 'Services', 'services/digital': 'Digital Services', 'services/technology': 'Technology Services', 'services/recruitment': 'Recruitment Services', 'services/recruitment-websites': 'Recruitment Website Design', 'solutions/custom-software': 'Custom Software Development', 'solutions/recruitment-technology': 'Recruitment Technology Solutions', 'solutions/staffing-launch': 'Staffing Business Launch', 'solutions/automation': 'Workflow Automation', 'products/nimbussos': 'NimbussOS — Recruitment Operating System', contact: 'Contact TalentPlex' };
+const seoTitles: Record<string, string> = { services: 'Services', 'services/digital': 'Digital Services', 'services/technology': 'Technology Services', 'services/recruitment': 'Recruitment Services', 'services/recruitment-websites': 'Recruitment Website Design', 'solutions/custom-software': 'Custom Software Development', 'solutions/recruitment-technology': 'Recruitment Technology Solutions', 'solutions/staffing-launch': 'Staffing Business Launch', 'solutions/automation': 'Workflow Automation', 'products/nimbussos': 'NimbussOS — Recruitment Operating System', contact: 'Contact TalentPlex', privacy: 'Privacy Statement' };
 export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata { const key = params.slug.join('/'); const page = pages[key] ?? pages.services; const title = seoTitles[key] ?? (typeof page.title === 'string' ? page.title : 'TalentPlex'); return { title, description: page.copy, alternates: { canonical: `/${key}` }, openGraph: { title: `${title} | TalentPlex`, description: page.copy } }; }
 export function generateStaticParams() { return Object.keys(pages).map((slug) => ({ slug: slug.split('/') })); }
 
-export default function InnerPage({ params }: { params: { slug: string[] } }) { const key = params.slug.join('/'); const page = pages[key]; if (!page) notFound(); const deepKind = key === 'services/digital' ? 'digital' : key === 'services/recruitment' ? 'recruitment' : key === 'services/recruitment-websites' ? 'recruitment-websites' : key === 'solutions/automation' ? 'automation' : key === 'industries' ? 'industries' : null; return <main><SiteHeader /><PageHero eyebrow={page.eyebrow} title={page.title} copy={page.copy} light={page.kind === 'light'}>{page.kind === 'product' ? <ProductVisual /> : page.kind === 'diagram' ? <Diagram nodes={(page.items ?? []).slice(0, 8)} /> : <div className="inner-hero-orb" />}</PageHero>{deepKind && <DeepDive kind={deepKind} />}{key === 'contact' ? <section className="section"><div className="container grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><div className="eyebrow">A SIMPLE START</div><h2 className="display mt-5 text-4xl font-semibold sm:text-6xl">Choose the path that fits.</h2><p className="mt-5 text-muted">Frontend validation is active. Submission integration can be connected when the backend is ready.</p></div><ContactFormLive /></div></section> : <>{page.items && <CardGrid title={key === 'work' ? 'Selected work' : key === 'services/recruitment' ? 'Recruitment Services' : 'Capabilities'} items={page.items} />}{key === 'services/recruitment' && <section id="industries-we-serve" className="section"><div className="container"><div className="eyebrow">INDUSTRIES WE SERVE</div><h2 className="display mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">Recruitment support across the sectors that keep business moving.</h2><p className="mt-5 max-w-2xl text-muted">Our recruitment services support specialized, operational and professional hiring across these core industries.</p><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{recruitmentIndustries.map((industry) => <article key={industry} className="inner-card"><span className="eyebrow text-brand">INDUSTRY</span><h3 className="display mt-10 text-2xl font-semibold">{industry}</h3></article>)}</div></div></section>}{page.process && <Process items={page.process} />}{key === 'products/nimbussos' && <section className="section deep-plum"><div className="container"><ProductVisual /></div></section>}{key === 'company' && <section className="section"><div className="container"><div className="eyebrow">HOW WE WORK</div><h2 className="display mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">Make the next move with clarity.</h2><p className="mt-6 max-w-xl text-muted">We stay close to the problem, make decisions visible and build things that can keep moving after launch.</p></div></section>}</>}<section className="section final-cta"><div className="container text-center"><div className="eyebrow">MAKE YOUR NEXT MOVE</div><h2 className="display mx-auto mt-5 max-w-3xl text-5xl font-semibold sm:text-7xl">Not sure where to start?</h2><p className="mx-auto mt-5 max-w-lg text-muted">Tell us what you&apos;re trying to build.</p><div className="mt-8"><CTA /></div></div></section><SiteFooter /></main>; }
+export default function InnerPage({ params }: { params: { slug: string[] } }) {
+  const key = params.slug.join('/');
+  const page = pages[key];
+  if (!page) notFound();
+
+  const deepKind =
+    key === 'services/digital' ? 'digital' :
+    key === 'services/recruitment' ? 'recruitment' :
+    key === 'services/recruitment-websites' ? 'recruitment-websites' :
+    key === 'solutions/automation' ? 'automation' :
+    key === 'industries' ? 'industries' : null;
+
+  if (key === 'contact') {
+    return <main>
+      <SiteHeader />
+      <section className="contact-hero">
+        <div className="container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+          <div>
+            <div className="eyebrow">CONTACT TALENTPLEX</div>
+            <h1 className="display mt-5 max-w-3xl text-5xl font-semibold leading-[.98] sm:text-7xl">Let&apos;s talk about <span className="gradient-text">what&apos;s next.</span></h1>
+            <p className="mt-6 max-w-xl text-lg text-muted">Tell us what you need across digital, technology, recruitment services or business systems. We&apos;ll route your enquiry to the right place.</p>
+            <div className="contact-company-card mt-10">
+              <div className="eyebrow">US OFFICE</div>
+              <h2 className="display mt-3 text-2xl font-semibold">TALENTPLEX GLOBAL LLC</h2>
+              <address className="mt-4 not-italic text-muted leading-7">
+                5900 Balcones Drive, STE 100<br />
+                Austin, Texas 78731<br />
+                United States
+              </address>
+              <p className="mt-5 text-sm text-muted">Registered in the United States as TALENTPLEX GLOBAL LLC.</p>
+            </div>
+          </div>
+          <div className="contact-form-panel">
+            <div className="eyebrow">START A CONVERSATION</div>
+            <h2 className="display mt-4 text-3xl font-semibold sm:text-4xl">How can we help?</h2>
+            <p className="mt-3 text-muted">Share a few details and we&apos;ll have the context needed to understand your enquiry.</p>
+            <ContactFormLive />
+          </div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>;
+  }
+
+  if (key === 'privacy') {
+    return <main>
+      <SiteHeader />
+      <section className="legal-page">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">PRIVACY</div>
+            <h1 className="display mt-5 text-5xl font-semibold sm:text-7xl">Privacy Statement</h1>
+            <p className="mt-6 text-lg text-muted">Effective date: September 30, 2026</p>
+          </div>
+          <div className="legal-content mt-12 max-w-4xl">
+            <section>
+              <h2>1. Who we are</h2>
+              <p>This website is operated by <strong>TALENTPLEX GLOBAL LLC</strong>, with a US office at 5900 Balcones Drive, STE 100, Austin, Texas 78731, United States.</p>
+            </section>
+            <section>
+              <h2>2. Information we collect</h2>
+              <p>We may collect information you choose to submit through our website, including your name, work email, company name, phone number, enquiry type and message. We may also collect limited technical information needed to operate and secure the website, such as browser, device and request information.</p>
+            </section>
+            <section>
+              <h2>3. How we use information</h2>
+              <p>We use submitted information to respond to enquiries, understand business requirements, provide requested information about our services or products, maintain business records, improve our website and services, and protect our systems from misuse or abuse.</p>
+            </section>
+            <section>
+              <h2>4. Recruitment information</h2>
+              <p>If you contact us about recruitment or staffing services, information you provide may be used to evaluate and respond to the relevant business or hiring requirement. Please do not submit sensitive personal information unless it is necessary for the specific enquiry.</p>
+            </section>
+            <section>
+              <h2>5. Sharing of information</h2>
+              <p>We do not sell personal information. We may share information with service providers that support our website, communications, hosting, security or business operations, and when required by law or necessary to protect our rights and systems.</p>
+            </section>
+            <section>
+              <h2>6. Data retention</h2>
+              <p>We retain information only for as long as reasonably necessary for the purpose for which it was collected, for legitimate business needs, or to meet legal and compliance obligations.</p>
+            </section>
+            <section>
+              <h2>7. Security</h2>
+              <p>We use reasonable administrative and technical safeguards designed to protect information submitted through this website. No internet-based system can be guaranteed to be completely secure.</p>
+            </section>
+            <section>
+              <h2>8. Cookies and similar technologies</h2>
+              <p>Our website may use essential cookies or similar technologies required for functionality, security and performance. If we introduce non-essential analytics or marketing cookies, we may provide additional notice or controls where required.</p>
+            </section>
+            <section>
+              <h2>9. Your choices</h2>
+              <p>You may contact us to ask about personal information you have submitted through this website or to request correction or deletion where applicable. Certain information may need to be retained when required by law or for legitimate business purposes.</p>
+            </section>
+            <section>
+              <h2>10. Third-party websites</h2>
+              <p>Our website may link to third-party websites, including NimbussOS. Their privacy practices are governed by their own policies, and this statement does not apply to third-party websites.</p>
+            </section>
+            <section>
+              <h2>11. Changes to this statement</h2>
+              <p>We may update this Privacy Statement from time to time. The effective date shown above indicates when this version became effective.</p>
+            </section>
+            <section>
+              <h2>12. Contact</h2>
+              <p>For privacy-related enquiries, use the contact form on our <a href="/contact">Contact page</a> and select the option that best matches your request.</p>
+              <p className="mt-3"><strong>TALENTPLEX GLOBAL LLC</strong><br />5900 Balcones Drive, STE 100<br />Austin, Texas 78731<br />United States</p>
+            </section>
+          </div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>;
+  }
+
+  return <main>
+    <SiteHeader />
+    <PageHero eyebrow={page.eyebrow} title={page.title} copy={page.copy} light={page.kind === 'light'}>
+      {page.kind === 'product' ? <ProductVisual /> : page.kind === 'diagram' ? <Diagram nodes={(page.items ?? []).slice(0, 8)} /> : <div className="inner-hero-orb" />}
+    </PageHero>
+    {deepKind && <DeepDive kind={deepKind} />}
+    <>
+      {page.items && <CardGrid title={key === 'work' ? 'Selected work' : key === 'services/recruitment' ? 'Recruitment Services' : 'Capabilities'} items={page.items} />}
+      {key === 'services/recruitment' && <section id="industries-we-serve" className="section"><div className="container"><div className="eyebrow">INDUSTRIES WE SERVE</div><h2 className="display mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">Recruitment support across the sectors that keep business moving.</h2><p className="mt-5 max-w-2xl text-muted">Our recruitment services support specialized, operational and professional hiring across these core industries.</p><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{recruitmentIndustries.map((industry) => <article key={industry} className="inner-card"><span className="eyebrow text-brand">INDUSTRY</span><h3 className="display mt-10 text-2xl font-semibold">{industry}</h3></article>)}</div></div></section>}
+      {page.process && <Process items={page.process} />}
+      {key === 'products/nimbussos' && <section className="section deep-plum"><div className="container"><ProductVisual /></div></section>}
+      {key === 'company' && <section className="section"><div className="container"><div className="eyebrow">HOW WE WORK</div><h2 className="display mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">Make the next move with clarity.</h2><p className="mt-6 max-w-xl text-muted">We stay close to the problem, make decisions visible and build things that can keep moving after launch.</p></div></section>}
+    </>
+    <section className="section final-cta"><div className="container text-center"><div className="eyebrow">MAKE YOUR NEXT MOVE</div><h2 className="display mx-auto mt-5 max-w-3xl text-5xl font-semibold sm:text-7xl">Not sure where to start?</h2><p className="mx-auto mt-5 max-w-lg text-muted">Tell us what you&apos;re trying to build.</p><div className="mt-8"><CTA /></div></div></section>
+    <SiteFooter />
+  </main>;
+}
