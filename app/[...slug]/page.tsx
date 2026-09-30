@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { CTA, CardGrid, ContactFormLive, DeepDive, Diagram, PageHero, Process, ProductVisual, SiteFooter, SiteHeader } from '../../components/site';
 
 const pages: Record<string, { eyebrow: string; title: React.ReactNode; copy: string; items?: string[]; process?: string[]; kind?: 'product' | 'diagram' | 'light' }> = {
@@ -32,6 +32,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
   const key = params.slug.join('/');
   const page = pages[key];
   if (!page) notFound();
+  if (key === 'services') redirect('/services/recruitment');
 
   const deepKind =
     key === 'services/digital' ? 'digital' :
