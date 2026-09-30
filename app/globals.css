@@ -1946,3 +1946,27 @@ header .mobile-nav-logo-text {
 header .mobile-nav-logo-text span {
   color:#FF2935 !important;
 }
+
+
+/* Exact desktop logo reused in mobile menu. */
+header .mobile-nav-top {
+  background:#fff !important;
+  border-color:#E5E7EB !important;
+}
+header .mobile-nav-logo-full {
+  display:inline-flex !important;
+  align-items:center;
+  background:#fff !important;
+  padding:0 !important;
+  border-radius:0 !important;
+}
+header .mobile-nav-logo-full-image {
+  display:block;
+  width:auto;
+  height:40px;
+  max-width:220px;
+  object-fit:contain;
+}
+header .mobile-nav-close {
+  color:#17181B !important;
+}
