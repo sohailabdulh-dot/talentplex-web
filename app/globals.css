@@ -1071,3 +1071,14 @@ header nav[aria-label="Primary"] .cta-primary {
   .technology-focus-card,
   .technology-process-card { min-height:auto; }
 }
+
+
+/* Highlight product navigation. */
+header nav[aria-label="Primary"] .nimbussos-nav {
+  color:#FF2935 !important;
+  font-weight:700;
+}
+header nav[aria-label="Primary"] .nimbussos-nav:hover,
+header nav[aria-label="Primary"] .nimbussos-nav:focus-visible {
+  color:#fff !important;
+}
