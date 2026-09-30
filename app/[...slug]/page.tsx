@@ -58,8 +58,10 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
       ['Technology', 'Software, infrastructure, product, data and technology operations hiring.'],
       ['Finance & Accounting', 'Accounting, finance, audit and business operations roles.'],
       ['Healthcare', 'Non-clinical, operational and administrative hiring support.'],
-      ['Professional Services', 'Sales, marketing, administration and other professional functions.'],
+      ['Professional Services', 'Professional, administrative and business-support functions.'],
       ['Legal', 'Attorneys, paralegals, legal operations, support and administrative roles.'],
+      ['Food & Beverage', 'Operations, manufacturing, maintenance, quality, supply chain and commercial roles.'],
+      ['Sales & Marketing', 'Business development, sales, account management, marketing and growth roles.'],
       ['Other Industries', 'Our recruitment support is not limited to the industries listed here. We can discuss requirements across other sectors and functions as well.']
     ];
     const process = [
