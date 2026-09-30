@@ -1606,3 +1606,127 @@ header nav[aria-label="Primary"] a[href*="nimbussos.com"]:focus-visible {
 .recruitment-brief-support span {
   color:#B9BDC5 !important;
 }
+
+
+/* Site-wide motion system. */
+.scroll-reveal {
+  opacity:0;
+  transform:translateY(18px);
+  transition:
+    opacity .58s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms),
+    transform .58s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms);
+  will-change:opacity,transform;
+}
+.scroll-reveal.is-visible {
+  opacity:1;
+  transform:translateY(0);
+}
+.nav-dropdown-panel {
+  transform-origin:top left;
+  animation:menuPanelIn .18s ease-out both;
+}
+.nav-dropdown-item {
+  opacity:0;
+  transform:translateY(6px);
+  animation:menuItemIn .22s ease-out both;
+  transition:transform .16s ease,background-color .16s ease,color .16s ease;
+}
+.nav-dropdown-item:hover,
+.nav-dropdown-item:focus-visible {
+  transform:translateX(4px);
+}
+header nav[aria-label="Primary"] .nav-link {
+  transition:color .18s ease,transform .18s ease;
+}
+header nav[aria-label="Primary"] .nav-link:hover {
+  transform:translateY(-1px);
+}
+.capability-card,
+.recruitment-industry-card,
+.recruitment-service-card,
+.recruitment-industry-detail,
+.recruitment-process-card,
+.engagement-card,
+.why-card,
+.beyond-card,
+.technology-service-card,
+.technology-dark-card,
+.technology-focus-card,
+.technology-process-card,
+.talent-solution-card,
+.talent-solution-dark-card,
+.talent-solution-step,
+.recruitment-brief-support > div,
+.inner-card,
+.process-step {
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background-color .22s ease;
+}
+.capability-card:hover,
+.recruitment-service-card:hover,
+.recruitment-industry-detail:hover,
+.recruitment-process-card:hover,
+.engagement-card:hover,
+.why-card:hover,
+.beyond-card:hover,
+.technology-service-card:hover,
+.technology-dark-card:hover,
+.technology-focus-card:hover,
+.technology-process-card:hover,
+.talent-solution-card:hover,
+.talent-solution-dark-card:hover,
+.talent-solution-step:hover,
+.inner-card:hover,
+.process-step:hover {
+  transform:translateY(-4px);
+}
+.cta-primary {
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+.cta-primary:hover {
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(227,19,27,.26);
+  filter:brightness(1.04);
+}
+@keyframes menuPanelIn {
+  from { opacity:0; transform:translateY(-6px) scale(.985); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes menuItemIn {
+  from { opacity:0; transform:translateY(6px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible,
+  .nav-dropdown-panel,
+  .nav-dropdown-item,
+  header nav[aria-label="Primary"] .nav-link,
+  .cta-primary,
+  .capability-card,
+  .recruitment-industry-card,
+  .recruitment-service-card,
+  .recruitment-industry-detail,
+  .recruitment-process-card,
+  .engagement-card,
+  .why-card,
+  .beyond-card,
+  .technology-service-card,
+  .technology-dark-card,
+  .technology-focus-card,
+  .technology-process-card,
+  .talent-solution-card,
+  .talent-solution-dark-card,
+  .talent-solution-step,
+  .recruitment-brief-support > div,
+  .inner-card,
+  .process-step {
+    animation:none !important;
+    transition:none !important;
+    transform:none !important;
+    opacity:1 !important;
+  }
+}
