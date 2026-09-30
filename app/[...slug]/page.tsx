@@ -40,6 +40,129 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
     key === 'solutions/automation' ? 'automation' :
     key === 'industries' ? 'industries' : null;
 
+  if (key === 'services/technology') {
+    const technologyServices = [
+      ['WEBSITE DESIGN & DEVELOPMENT', 'Custom websites built around your brand, audience and business goals.', 'Corporate websites, recruitment websites, landing pages and web experiences designed for clarity, credibility and conversion.'],
+      ['CUSTOM SOFTWARE', 'Software built around the way your business actually works.', 'Internal tools, portals, workflow systems and business applications created when off-the-shelf software does not fit.'],
+      ['SAAS & WEB APPS', 'Products designed for recurring use, growth and scale.', 'From MVPs to full SaaS platforms, we design and build web applications around your users, workflows and commercial model.'],
+      ['AUTOMATION', 'Connect repetitive work and reduce unnecessary manual steps.', 'Workflow automation, system triggers, notifications, data movement and business process automation across connected tools.'],
+      ['SYSTEMS & INTEGRATIONS', 'Make disconnected tools work together.', 'APIs, data sync, third-party integrations, CRM connections, reporting layers and operational systems that improve visibility.'],
+      ['RECRUITMENT TECHNOLOGY', 'Technology built for staffing and recruitment operations.', 'ATS, CRM, candidate and client workflows, reporting and recruitment systems informed by how staffing teams actually work.']
+    ];
+    const websiteTypes = [
+      ['Corporate Websites', 'Clear, credible websites that explain what your business does and make the next step easy.'],
+      ['Recruitment Websites', 'Employer, candidate and job experiences designed around real recruitment workflows.'],
+      ['Landing Pages', 'Focused campaign and conversion pages for services, products, launches and lead generation.'],
+      ['Web Applications', 'Interactive browser-based products, portals and workflow tools built for real users.']
+    ];
+    const process = [
+      ['01', 'Understand the business', 'We start with the users, goals, workflow, existing systems and the problem the technology needs to solve.'],
+      ['02', 'Define the solution', 'We shape scope, architecture, user journeys, integrations and priorities before development begins.'],
+      ['03', 'Design the experience', 'We create interfaces and interactions that make the system easier to understand and use.'],
+      ['04', 'Build and integrate', 'We develop the product, connect required systems and keep implementation aligned to the agreed workflow.'],
+      ['05', 'Test and launch', 'We validate key flows, fix issues and prepare the solution for production use.'],
+      ['06', 'Improve', 'After launch, the system can evolve as requirements, users and business processes change.']
+    ];
+    return <main>
+      <SiteHeader />
+      <section className="technology-page-hero">
+        <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+          <div>
+            <div className="eyebrow">TECHNOLOGY SERVICES</div>
+            <h1 className="display mt-5 max-w-4xl text-5xl font-semibold leading-[.96] sm:text-7xl">Technology built around <span className="gradient-text">how your business works.</span></h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted">Custom websites, software, SaaS products, automation and connected systems designed around real business requirements — not generic templates.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="/contact" className="cta-primary inline-flex h-12 items-center gap-3 rounded-xl px-5 text-sm font-semibold text-white">Discuss a Project <span>↗</span></a>
+              <a href="#technology-services" className="inline-flex h-12 items-center gap-3 rounded-xl border border-white/20 px-5 text-sm font-semibold text-white">Explore Technology <span>↓</span></a>
+            </div>
+          </div>
+          <div className="technology-hero-panel">
+            <div className="eyebrow">WHAT WE BUILD</div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {['Custom Websites','Custom Software','SaaS Products','Web Apps','Automation','Integrations'].map((item)=><div key={item} className="technology-hero-chip">{item}</div>)}
+            </div>
+            <div className="mt-6 border-t border-white/10 pt-5 text-sm text-muted">Strategy, design, development and integration brought together around the business problem.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="technology-services" className="technology-detail-section light">
+        <div className="container">
+          <div className="eyebrow">OUR TECHNOLOGY SERVICES</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">From websites to business systems, built with purpose.</h2>
+          <p className="mt-5 max-w-2xl text-muted">We focus on the technology that helps a business communicate better, operate more clearly or create a better digital product.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {technologyServices.map(([label,title,copy])=><article key={label} className="technology-service-card"><span>{label}</span><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="technology-detail-section dark">
+        <div className="container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+          <div>
+            <div className="eyebrow">WEBSITE DESIGN & DEVELOPMENT</div>
+            <h2 className="display mt-4 max-w-3xl text-4xl font-semibold sm:text-6xl">Your website should do more than look good.</h2>
+            <p className="mt-5 max-w-2xl text-muted">We design websites around how people understand your business, evaluate your credibility and decide what to do next.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {websiteTypes.map(([title,copy])=><article key={title} className="technology-dark-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="technology-detail-section light">
+        <div className="container">
+          <div className="eyebrow">SOFTWARE, SAAS & AUTOMATION</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">Build the system your workflow actually needs.</h2>
+          <p className="mt-5 max-w-3xl text-muted">When standard tools cannot support the way your team works, we can design a custom application, SaaS product, portal or automation layer around the real process.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              ['Custom Software','Internal systems, workflow tools, portals and business applications.'],
+              ['SaaS Products','Web-based products designed for recurring use, customers and scale.'],
+              ['Automation & Integrations','Connected workflows, APIs, notifications, data sync and system-to-system automation.']
+            ].map(([title,copy])=><article key={title} className="technology-focus-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="technology-process-section">
+        <div className="container">
+          <div className="eyebrow">HOW WE WORK</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">From business problem to working product.</h2>
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
+            {process.map(([number,title,copy])=><article key={number} className="technology-process-card"><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="technology-detail-section dark">
+        <div className="container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div>
+            <div className="eyebrow">RECRUITMENT TECHNOLOGY</div>
+            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">Technology informed by real recruitment workflows.</h2>
+            <p className="mt-5 text-muted">For staffing and recruitment businesses, we also build and connect systems around leads, clients, jobs, candidates, submissions, interviews, placements and reporting.</p>
+          </div>
+          <div className="technology-recruitment-panel">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {['ATS & CRM','Client Portals','Candidate Workflows','Reporting','Automation','System Integrations'].map((item)=><div key={item} className="technology-hero-chip">{item}</div>)}
+            </div>
+            <a href="https://www.nimbussos.com/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white">Explore NimbussOS <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta section">
+        <div className="container text-center">
+          <div className="eyebrow">HAVE A TECHNOLOGY REQUIREMENT?</div>
+          <h2 className="display mx-auto mt-5 max-w-4xl text-5xl font-semibold sm:text-7xl">Tell us what you need the technology to do.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-muted">Website, software, SaaS, automation or a connected business system — start with the problem and we&apos;ll shape the right approach.</p>
+          <div className="mt-8"><CTA>Discuss a Project</CTA></div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>;
+  }
+
   if (key === 'services/recruitment') {
     const serviceCards = [
       ['DIRECT HIRE', 'Permanent hiring for roles that need the right long-term fit.', 'Focused search, screening and candidate presentation for specialized, professional and operational positions.'],
