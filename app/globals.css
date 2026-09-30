@@ -1730,3 +1730,103 @@ header nav[aria-label="Primary"] .nav-link:hover {
     opacity:1 !important;
   }
 }
+
+
+/* Recruitment-led Company page. */
+.company-page-hero {
+  padding:190px 0 92px;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(227,19,27,.18),transparent 30%),
+    linear-gradient(145deg,#0D0E10,#17181B 68%,#24090D);
+  color:#fff;
+}
+.company-page-hero .text-muted,
+.company-section.dark .text-muted { color:#C9CBD1 !important; }
+.company-hero-panel {
+  padding:30px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:26px;
+  background:rgba(255,255,255,.05);
+  box-shadow:0 24px 60px rgba(0,0,0,.22);
+}
+.company-section { padding:82px 0; }
+.company-section.light {
+  background:#fff;
+  color:#17181B;
+}
+.company-section.light .eyebrow { color:#E3131B !important; }
+.company-section.light .text-muted { color:#5B5E66 !important; }
+.company-section.dark {
+  background:#0D0E10;
+  color:#fff;
+}
+.company-copy {
+  display:grid;
+  gap:20px;
+  color:#55565C;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:17px;
+  line-height:1.8;
+}
+.company-value-card,
+.company-principle-card {
+  padding:26px;
+  border:1px solid #35373D;
+  border-radius:22px;
+  background:#17181B;
+}
+.company-value-card { min-height:280px; }
+.company-value-card > span {
+  color:#FF2935;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.13em;
+}
+.company-value-card h3,
+.company-principle-card h3 {
+  margin-top:34px;
+  color:#fff;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:21px;
+  line-height:1.4;
+  font-weight:700;
+}
+.company-value-card p,
+.company-principle-card p {
+  margin-top:12px;
+  color:#BFC2C9;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:14px;
+  line-height:1.7;
+}
+.company-nimbus-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.company-nimbus-grid > div {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  padding:16px 18px;
+  border:1px solid #E2E4E8;
+  border-radius:16px;
+  background:#FAFAFA;
+  color:#22242A;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:14px;
+  font-weight:650;
+}
+.company-nimbus-link {
+  color:#E3131B;
+}
+.company-nimbus-link:hover { color:#B20F17; }
+.company-principle-card { min-height:220px; }
+@media (max-width:700px) {
+  .company-page-hero { padding:145px 0 64px; }
+  .company-section { padding:58px 0; }
+  .company-nimbus-grid { grid-template-columns:1fr; }
+  .company-value-card,
+  .company-principle-card { min-height:auto; }
+}
