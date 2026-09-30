@@ -477,7 +477,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
           <div>
             <div className="eyebrow">CONTACT TALENTPLEX GLOBAL</div>
             <h1 className="display mt-5 max-w-3xl text-5xl font-semibold leading-[.98] sm:text-7xl">Let&apos;s talk about <span className="gradient-text">what&apos;s next.</span></h1>
-            <p className="mt-6 max-w-xl text-lg text-muted">Tell us what you need across digital, technology, recruitment services or business systems. We&apos;ll route your enquiry to the right place.</p>
+            <p className="mt-6 max-w-xl text-lg text-muted">Whether you are hiring, building technology or growing your digital presence, tell us what you need and we&apos;ll connect you with the right team.</p>
             <div className="contact-company-card mt-10">
               <div className="eyebrow">US OFFICE</div>
               <h2 className="contact-office-title mt-3">TALENTPLEX GLOBAL LLC</h2>
@@ -517,7 +517,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
             </section>
             <section>
               <h2>2. Information we collect</h2>
-              <p>We may collect information you choose to submit through our website, including your name, work email, company name, phone number, enquiry type and message. We may also collect limited technical information needed to operate and secure the website, such as browser, device and request information.</p>
+              <p>We may collect information you choose to submit through our website, including your name, work email, company name, phone number, company size, location or region, enquiry type, project or hiring timeline, number of openings where relevant, referral source and message. We may also collect limited technical information needed to operate and secure the website, such as browser, device and request information.</p>
             </section>
             <section>
               <h2>3. How we use information</h2>
