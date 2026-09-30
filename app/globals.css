@@ -1858,3 +1858,55 @@ header nav[aria-label="Primary"] .nav-link:hover {
   background-repeat:no-repeat;
   padding-right:38px;
 }
+
+
+/* Mobile navigation contrast and logo visibility fix. */
+header .mobile-nav-overlay {
+  background:
+    radial-gradient(circle at 86% 8%,rgba(227,19,27,.16),transparent 26%),
+    #0D0E10 !important;
+  color:#fff !important;
+}
+header .mobile-nav-top {
+  min-height:64px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  background:#17181B;
+}
+header .mobile-nav-logo {
+  display:inline-flex;
+  align-items:center;
+  background:transparent !important;
+  padding:0 !important;
+}
+header .mobile-nav-logo img {
+  display:block;
+  width:auto;
+  max-width:190px;
+  height:36px;
+}
+header .mobile-nav-close {
+  color:#fff !important;
+  line-height:1;
+}
+header .mobile-nav-overlay nav[aria-label="Mobile"] a {
+  color:#F3F4F6;
+}
+header .mobile-nav-overlay nav[aria-label="Mobile"] a.text-brandBright {
+  color:#FF2935 !important;
+}
+header .mobile-nav-overlay nav[aria-label="Mobile"] .cta-primary {
+  color:#fff !important;
+}
+@media (max-width:700px) {
+  header .mobile-nav-overlay { padding:18px !important; }
+  header .mobile-nav-overlay nav[aria-label="Mobile"] {
+    margin-top:34px !important;
+    gap:22px !important;
+  }
+  header .mobile-nav-overlay nav[aria-label="Mobile"] > a:not(.cta-primary) {
+    font-size:2.25rem !important;
+    line-height:1.1;
+  }
+}
