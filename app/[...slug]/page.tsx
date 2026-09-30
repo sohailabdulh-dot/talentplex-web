@@ -151,8 +151,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
       ['CUSTOM SOFTWARE', 'Software built around the way your business actually works.', 'Internal tools, portals, workflow systems and business applications created when off-the-shelf software does not fit.'],
       ['SAAS & WEB APPS', 'Products designed for recurring use, growth and scale.', 'From MVPs to full SaaS platforms, we design and build web applications around your users, workflows and commercial model.'],
       ['AUTOMATION', 'Connect repetitive work and reduce unnecessary manual steps.', 'Workflow automation, system triggers, notifications, data movement and business process automation across connected tools.'],
-      ['SYSTEMS & INTEGRATIONS', 'Make disconnected tools work together.', 'APIs, data sync, third-party integrations, CRM connections, reporting layers and operational systems that improve visibility.'],
-      ['RECRUITMENT TECHNOLOGY', 'Technology built for staffing and recruitment operations.', 'ATS, CRM, candidate and client workflows, reporting and recruitment systems informed by how staffing teams actually work.']
+      ['SYSTEMS & INTEGRATIONS', 'Make disconnected tools work together.', 'APIs, data sync, third-party integrations, CRM connections, reporting layers and operational systems that improve visibility.']
     ];
     const websiteTypes = [
       ['Corporate Websites', 'Clear, credible websites that explain what your business does and make the next step easy.'],
@@ -236,22 +235,6 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
           <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">From business problem to working product.</h2>
           <div className="mt-10 grid gap-4 lg:grid-cols-3">
             {process.map(([number,title,copy])=><article key={number} className="technology-process-card"><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="technology-detail-section dark">
-        <div className="container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-          <div>
-            <div className="eyebrow">RECRUITMENT TECHNOLOGY</div>
-            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">Technology informed by real recruitment workflows.</h2>
-            <p className="mt-5 text-muted">For staffing and recruitment businesses, we also build and connect systems around leads, clients, jobs, candidates, submissions, interviews, placements and reporting.</p>
-          </div>
-          <div className="technology-recruitment-panel">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {['ATS & CRM','Client Portals','Candidate Workflows','Reporting','Automation','System Integrations'].map((item)=><div key={item} className="technology-hero-chip">{item}</div>)}
-            </div>
-            <a href="https://www.nimbussos.com/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white">Explore NimbussOS <span>↗</span></a>
           </div>
         </div>
       </section>
