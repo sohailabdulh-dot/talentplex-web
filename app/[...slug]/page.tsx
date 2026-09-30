@@ -8,7 +8,7 @@ const pages: Record<string, { eyebrow: string; title: React.ReactNode; copy: str
   'services/technology': { eyebrow: 'TECHNOLOGY SERVICES', title: 'Technology built around how you work.', copy: 'Modern websites, software products and connected systems designed around real business workflows.', items: ['Website Design & Development', 'Custom Software', 'SaaS / Web Apps', 'Automation', 'Recruitment Technology'], process: ['Discover', 'Architect', 'Prototype', 'Build', 'Integrate', 'Deploy', 'Improve'], kind: 'diagram' },
   'services/recruitment': { eyebrow: 'RECRUITMENT SERVICES', title: 'Talent that moves business forward.', copy: 'TalentPlex supports businesses with direct hire, contract staffing, executive search and recruitment support across the industries we know best.', items: ['Direct Hire', 'Contract Staffing', 'Contract-to-Hire', 'Executive Search', 'RPO / Recruitment Support'], process: ['Requirement', 'Search', 'Screen', 'Present', 'Interview', 'Offer', 'Hire'] },
   'services/recruitment-websites': { eyebrow: 'RECRUITMENT WEBSITE DESIGN', title: 'Websites built for recruitment businesses.', copy: 'We combine staffing experience with modern design and development to build websites around employers, candidates, jobs and real recruitment workflows.', items: ['Career Pages', 'Job Search', 'Job Detail Pages', 'Resume Upload', 'Employer Lead Capture', 'Candidate Registration', 'Recruiter Profiles', 'Job Alerts', 'ATS Integration', 'CRM Integration', 'Analytics', 'SEO Structure'], process: ['Visitor', 'Employer / Candidate', 'Lead / Application', 'ATS / CRM', 'Recruiter / BDM', 'Interview', 'Placement'], kind: 'light' },
-  solutions: { eyebrow: 'SOLUTIONS', title: 'Solutions built around real business problems.', copy: 'Practical systems for the moments when standard tools no longer fit.', items: ['Custom Software', 'Recruitment Technology', 'Staffing Business Launch', 'Automation'], kind: 'diagram' },
+  solutions: { eyebrow: 'TALENT SOLUTIONS', title: 'Build the business around the talent operation.', copy: 'Launch, generate demand and run recruitment operations with connected support across brand, lead generation, outreach and NimbussOS.', items: ['Staffing Business Launch', 'Lead Generation & Outbound', 'Recruitment Operations', 'NimbussOS'] },
   'solutions/custom-software': { eyebrow: 'CUSTOM SOFTWARE', title: <>Your software should fit your business.<br /><span className="gradient-text">Not the other way around.</span></>, copy: 'TalentPlex develops custom systems when standard software cannot match the way a business operates.', items: ['Custom CRM', 'ATS', 'Business Operations Platform', 'Client Portal', 'Candidate Portal', 'Workflow System', 'Reporting Platform', 'Internal Application', 'SaaS Platform', 'AI-Assisted Application'], process: ['Discovery', 'Workflow mapping', 'Architecture', 'UX', 'Development', 'Integration', 'QA', 'Deployment', 'Support'], kind: 'diagram' },
   'solutions/recruitment-technology': { eyebrow: 'RECRUITMENT TECHNOLOGY', title: 'Technology for modern recruitment operations.', copy: 'Connect leads, clients, jobs, candidates and placements in one clear operating architecture.', items: ['ATS', 'Recruitment CRM', 'Client Management', 'Candidate Management', 'Job Management', 'Submission Tracking', 'Interview Tracking', 'Placement Tracking', 'Recruiter Dashboard', 'Reporting', 'Automation'], process: ['Lead', 'Client', 'Job', 'Candidate', 'Submission', 'Interview', 'Offer', 'Placement'] },
   'solutions/staffing-launch': { eyebrow: 'STAFFING BUSINESS INFRASTRUCTURE', title: 'Start your staffing business with the infrastructure already thought through.', copy: 'TalentPlex helps build the digital, technology and operational foundation behind a modern recruitment company.', items: ['Brand', 'Website', 'Domain', 'Email', 'ATS', 'CRM', 'Calling', 'Lead Generation', 'Job Boards', 'Recruitment Workflow', 'Sales Workflow', 'Reporting', 'Templates', 'Automation', 'Analytics'], process: ['Foundation', 'Systems', 'Operations', 'Scale'], kind: 'diagram' },
@@ -39,6 +39,111 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
     key === 'services/recruitment-websites' ? 'recruitment-websites' :
     key === 'solutions/automation' ? 'automation' :
     key === 'industries' ? 'industries' : null;
+
+  if (key === 'solutions') {
+    const launchSteps = [
+      ['01', 'Foundation', 'Brand, domain, business email, website, positioning and the basic systems needed to operate professionally.'],
+      ['02', 'Lead Generation', 'Define target markets, build prospect lists and create repeatable lead-generation workflows around the clients you want to reach.'],
+      ['03', 'Outbound & Positive Response', 'Set up outreach sequences, messaging and follow-up systems designed to create relevant conversations and positive responses.'],
+      ['04', 'Hand-off to your team', 'Your team takes over the live conversation, relationship and client workflow once a prospect is engaged.'],
+      ['05', 'Operate in NimbussOS', 'Manage leads, accounts, jobs, candidates, outreach and reporting in one connected operating environment.']
+    ];
+    return <main>
+      <SiteHeader />
+      <section className="talent-solutions-hero">
+        <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+          <div>
+            <div className="eyebrow">TALENT SOLUTIONS</div>
+            <h1 className="display mt-5 max-w-4xl text-5xl font-semibold leading-[.96] sm:text-7xl">Launch, grow and run a <span className="gradient-text">modern staffing business.</span></h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted">From setting up the business foundation to building lead-generation and outbound systems, TalentPlex helps create the structure around your recruitment operation — while NimbussOS helps keep the workflow connected.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="/contact" className="cta-primary inline-flex h-12 items-center gap-3 rounded-xl px-5 text-sm font-semibold text-white">Talk to Our Team <span>↗</span></a>
+              <a href="#staffing-launch" className="inline-flex h-12 items-center gap-3 rounded-xl border border-white/20 px-5 text-sm font-semibold text-white">Explore Talent Solutions <span>↓</span></a>
+            </div>
+          </div>
+          <div className="talent-solutions-panel">
+            <div className="eyebrow">CONNECTED SUPPORT</div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {['Staffing Business Launch','Lead Generation','Outbound Outreach','Recruitment Operations','NimbussOS','Reporting & Automation'].map((item)=><div key={item} className="talent-solutions-chip">{item}</div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="staffing-launch" className="talent-solutions-section light">
+        <div className="container">
+          <div className="eyebrow">STAFFING BUSINESS LAUNCH</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">Starting a staffing company? We can help build the operating foundation.</h2>
+          <p className="mt-5 max-w-3xl text-muted">Instead of piecing everything together separately, we help organize the business setup around the systems, digital presence and workflows a staffing company needs to start operating professionally.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              ['Brand & Positioning','Name, messaging, service positioning and practical market presentation.'],
+              ['Website & Domain','A credible staffing website, domain setup and business email foundation.'],
+              ['ATS / CRM Setup','Core recruitment and business-development workflow connected to your operating process.'],
+              ['Calling & Outreach','Calling, email and outreach infrastructure for business development activity.'],
+              ['Job Boards & Recruiting','Recruitment workflow, candidate sourcing structure and operating tools.'],
+              ['Reporting & Templates','Activity tracking, templates, basic reporting and repeatable process structure.']
+            ].map(([title,copy])=><article key={title} className="talent-solution-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="talent-solutions-section dark">
+        <div className="container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+          <div>
+            <div className="eyebrow">LEAD GENERATION & OUTBOUND</div>
+            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">We help build the pipeline. Your team owns the relationship.</h2>
+            <p className="mt-5 max-w-2xl text-muted">We can help define target accounts, build lead lists, structure outreach, prepare messaging and create follow-up systems designed to generate relevant conversations and positive responses.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              ['Target Account Strategy','Define the industries, company profiles and decision-makers you want to reach.'],
+              ['Lead List Building','Create structured prospect lists for consistent outreach activity.'],
+              ['Messaging & Sequences','Build practical email and outreach sequences around a clear value proposition.'],
+              ['Follow-Up Workflow','Create repeatable follow-up so engaged prospects do not get lost.'],
+              ['Response Handling','Route positive responses to your team so they can manage the relationship and sales conversation.'],
+              ['Activity Visibility','Track lead status, ownership and activity through a connected workflow.']
+            ].map(([title,copy])=><article key={title} className="talent-solution-dark-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="talent-solutions-section light">
+        <div className="container">
+          <div className="eyebrow">HOW THE MODEL WORKS</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">From business setup to live client conversations.</h2>
+          <div className="mt-10 grid gap-4 lg:grid-cols-5">
+            {launchSteps.map(([number,title,copy])=><article key={number} className="talent-solution-step"><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="talent-solutions-nimbus">
+        <div className="container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+          <div>
+            <div className="eyebrow">CONNECTED WITH NIMBUSSOS</div>
+            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">One operating system for the workflow behind the business.</h2>
+            <p className="mt-5 text-muted">Once leads, clients and jobs start moving, NimbussOS helps bring CRM, ATS, outreach, candidate activity, reporting and automation into one connected environment.</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {['Lead Generation','CRM','ATS','Outreach','Jobs','Candidates','Reporting','Automation'].map((item)=><span key={item} className="talent-nimbus-tag">{item}</span>)}
+            </div>
+            <a href="https://www.nimbussos.com/" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">Explore NimbussOS <span>↗</span></a>
+          </div>
+          <ProductVisual />
+        </div>
+      </section>
+
+      <section className="final-cta section">
+        <div className="container text-center">
+          <div className="eyebrow">BUILD THE OPERATION</div>
+          <h2 className="display mx-auto mt-5 max-w-4xl text-5xl font-semibold sm:text-7xl">Starting or scaling a staffing business?</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-muted">Tell us where you are today and what you need help building next.</p>
+          <div className="mt-8"><CTA>Talk to Our Team</CTA></div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>;
+  }
 
   if (key === 'services/technology') {
     const technologyServices = [
