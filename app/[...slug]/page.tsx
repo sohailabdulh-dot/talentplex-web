@@ -62,7 +62,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
       ['Legal', 'Attorneys, paralegals, legal operations, support and administrative roles.'],
       ['Food & Beverage', 'Operations, manufacturing, maintenance, quality, supply chain and commercial roles.'],
       ['Sales & Marketing', 'Business development, sales, account management, marketing and growth roles.'],
-      ['Other Industries', 'Our recruitment support is not limited to the industries listed here. We can discuss requirements across other sectors and functions as well.']
+      ['Other Industries & Functions', 'These are core areas, not limits. We support hiring requirements across other industries and functions too.']
     ];
     const process = [
       ['01', 'Understand the requirement', 'Role scope, must-have experience, location, work model, compensation and hiring priorities.'],
