@@ -602,3 +602,76 @@ header nav[aria-label="Primary"] .cta-primary {
     gap:8px 14px !important;
   }
 }
+
+
+/* Recruitment-first homepage sections. */
+.recruitment-industries-section {
+  padding:72px 0;
+  background:#0D0E10;
+  color:#fff;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.recruitment-industries-section .text-muted { color:#C9CBD1 !important; }
+.recruitment-industry-card {
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  padding:16px 18px;
+  border:1px solid #35373D;
+  border-radius:16px;
+  background:#17181B;
+  color:#F3F4F6;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:14px;
+  font-weight:600;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.recruitment-industry-card:hover {
+  transform:translateY(-2px);
+  border-color:#E3131B;
+  background:#1D1E22;
+}
+.beyond-recruitment-section {
+  padding:72px 0;
+  background:#fff;
+  color:#17181B;
+}
+.beyond-recruitment-section .eyebrow { color:#E3131B !important; }
+.beyond-recruitment-section .text-muted { color:#55565C !important; }
+.beyond-card {
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:28px;
+  padding:26px;
+  border:1px solid #E5E7EB;
+  border-radius:22px;
+  background:#FAFAFA;
+  color:#17181B;
+  box-shadow:0 12px 30px rgba(13,14,16,.06);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.beyond-card:hover {
+  transform:translateY(-3px);
+  border-color:rgba(227,19,27,.35);
+  box-shadow:0 18px 38px rgba(13,14,16,.10);
+}
+.beyond-card span {
+  color:#B20F17;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.12em;
+}
+.beyond-card strong {
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:20px;
+  line-height:1.35;
+}
+@media (max-width:700px) {
+  .recruitment-industries-section,
+  .beyond-recruitment-section { padding:54px 0; }
+  .recruitment-industry-card { min-height:58px; }
+}
