@@ -1419,3 +1419,130 @@ header nav[aria-label="Primary"] a[href*="nimbussos.com"]:focus-visible {
     text-align:left;
   }
 }
+
+
+/* Refined recruitment hero visual. */
+.recruitment-brief-visual {
+  background:
+    radial-gradient(circle at 82% 16%,rgba(227,19,27,.12),transparent 30%),
+    #17181B !important;
+}
+.recruitment-brief-main,
+.recruitment-brief-flow {
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:20px;
+  background:rgba(255,255,255,.035);
+}
+.recruitment-brief-main {
+  padding:22px;
+}
+.recruitment-brief-main > span,
+.recruitment-brief-flow-head > span,
+.recruitment-brief-support span {
+  color:#9EA1A8;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.13em;
+}
+.recruitment-brief-main h3 {
+  margin-top:8px;
+  color:#fff;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:26px;
+  line-height:1.2;
+  font-weight:700;
+}
+.recruitment-brief-main p {
+  margin-top:10px;
+  max-width:92%;
+  color:#BFC2C9;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:11px;
+  line-height:1.65;
+}
+.recruitment-brief-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.recruitment-brief-tags b {
+  padding:6px 9px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  color:#E5E7EB;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:10px;
+  font-weight:600;
+}
+.recruitment-brief-flow {
+  padding:18px 20px 20px;
+}
+.recruitment-brief-flow-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.recruitment-brief-flow-head b {
+  color:#FF2935;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:10px;
+  font-weight:700;
+}
+.recruitment-brief-track {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+.recruitment-brief-step {
+  text-align:center;
+}
+.recruitment-brief-step i {
+  display:block;
+  height:4px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+}
+.recruitment-brief-step i.active {
+  background:linear-gradient(90deg,#E3131B,#FF2935);
+}
+.recruitment-brief-step span {
+  display:block;
+  margin-top:8px;
+  color:#9EA1A8;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:9px;
+}
+.recruitment-brief-support {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.recruitment-brief-support > div {
+  min-height:86px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+}
+.recruitment-brief-support strong {
+  display:block;
+  margin-top:7px;
+  color:#F3F4F6;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:11px;
+  line-height:1.45;
+  font-weight:600;
+}
+@media (max-width:700px) {
+  .recruitment-brief-support {
+    grid-template-columns:1fr;
+  }
+  .recruitment-brief-main h3 {
+    font-size:22px;
+  }
+}
