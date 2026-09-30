@@ -863,3 +863,61 @@ header nav[aria-label="Primary"] .cta-primary {
   font-size:12px;
   line-height:1.5;
 }
+
+
+/* Technology and digital homepage capability refinement. */
+.beyond-recruitment-section {
+  padding:76px 0 !important;
+}
+.beyond-card {
+  min-height:260px !important;
+  gap:22px !important;
+}
+.beyond-card-featured {
+  border-color:rgba(227,19,27,.28) !important;
+  background:linear-gradient(145deg,#fff,#fff7f7) !important;
+}
+.beyond-card strong {
+  font-size:21px !important;
+  line-height:1.4 !important;
+}
+.beyond-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:auto;
+}
+.beyond-tags b {
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:5px 9px;
+  border:1px solid #E5E7EB;
+  border-radius:999px;
+  background:#fff;
+  color:#55565C;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:11px;
+  font-weight:600;
+}
+.beyond-support-line {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 12px;
+  color:#6B7280;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-size:12px;
+}
+.beyond-support-line span {
+  color:#43464D;
+  font-weight:600;
+}
+.beyond-support-line b {
+  font-weight:600;
+  color:#6B7280;
+}
+@media (max-width:700px) {
+  .beyond-recruitment-section { padding:56px 0 !important; }
+  .beyond-card { min-height:auto !important; }
+}
