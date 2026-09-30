@@ -44,20 +44,19 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
     return <main>
       <SiteHeader />
       <section className="contact-hero">
-        <div className="container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+        <div className="container contact-grid grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
           <div>
-            <div className="eyebrow">CONTACT TALENTPLEX</div>
+            <div className="eyebrow">CONTACT TALENTPLEX GLOBAL</div>
             <h1 className="display mt-5 max-w-3xl text-5xl font-semibold leading-[.98] sm:text-7xl">Let&apos;s talk about <span className="gradient-text">what&apos;s next.</span></h1>
             <p className="mt-6 max-w-xl text-lg text-muted">Tell us what you need across digital, technology, recruitment services or business systems. We&apos;ll route your enquiry to the right place.</p>
             <div className="contact-company-card mt-10">
               <div className="eyebrow">US OFFICE</div>
-              <h2 className="display mt-3 text-2xl font-semibold">TALENTPLEX GLOBAL LLC</h2>
+              <h2 className="contact-office-title mt-3">TALENTPLEX GLOBAL LLC</h2>
               <address className="mt-4 not-italic text-muted leading-7">
                 5900 Balcones Drive, STE 100<br />
                 Austin, Texas 78731<br />
                 United States
               </address>
-              <p className="mt-5 text-sm text-muted">Registered in the United States as TALENTPLEX GLOBAL LLC.</p>
             </div>
           </div>
           <div className="contact-form-panel">
