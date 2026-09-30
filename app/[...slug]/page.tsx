@@ -17,7 +17,7 @@ const pages: Record<string, { eyebrow: string; title: React.ReactNode; copy: str
   'products/nimbussos': { eyebrow: 'A TALENTPLEX PRODUCT', title: <>NimbussOS.<br /><span className="gradient-text">The operating system for modern staffing.</span></>, copy: 'Bring business development, CRM, ATS, outreach, jobs, candidates and recruitment operations into one connected system.', items: ['CRM', 'Lead Generation', 'Accounts', 'Contacts', 'Jobs', 'Candidates', 'Submissions', 'Interviews', 'Offers', 'Placements', 'Campaigns', 'Reports', 'Automation'], kind: 'product' },
   industries: { eyebrow: 'INDUSTRIES', title: 'Different industries. Different problems. Same focus on progress.', copy: 'Digital, technology and talent capabilities for businesses moving forward.', items: ['Technology', 'Staffing & Recruitment', 'Engineering', 'Manufacturing', 'Construction', 'Automotive', 'Energy', 'Supply Chain & Logistics', 'Finance & Accounting', 'Healthcare', 'Professional Services'] },
   work: { eyebrow: 'WORK', title: 'Things we&apos;re building.', copy: 'Honest product, concept and system work from the TalentPlex team.', items: ['NimbussOS — Internal Product', 'Recruitment Brand System — TalentPlex Concept', 'Staffing Workflow — System Concept'] },
-  company: { eyebrow: 'COMPANY', title: 'TalentPlex exists at the intersection of technology and talent.', copy: 'We bring digital craft, technical thinking and recruitment understanding together to make progress practical.', items: ['Clarity', 'Ownership', 'Craft', 'Practicality', 'Progress'] },
+  company: { eyebrow: 'ABOUT TALENTPLEX', title: 'Recruitment at the core. Technology built around the work.', copy: 'TalentPlex helps businesses hire better and helps staffing teams simplify the systems, workflows and operations behind recruitment.' },
   contact: { eyebrow: 'CONTACT', title: <>Let&apos;s talk about<br /><span className="gradient-text">what you&apos;re building.</span></>, copy: 'Tell us what you are trying to build, hire or make possible.' },
   privacy: { eyebrow: 'PRIVACY', title: 'Privacy Statement', copy: 'How TalentPlex Global LLC collects, uses and protects information submitted through this website.' },
 };
@@ -377,6 +377,92 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
           <h2 className="display mx-auto mt-5 max-w-4xl text-5xl font-semibold sm:text-7xl">Tell us the role. We&apos;ll start with the requirement.</h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted">Share the role, location, hiring model and what matters most. We&apos;ll take it from there.</p>
           <div className="mt-8"><CTA>Submit a Requirement</CTA></div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>;
+  }
+
+  if (key === 'company') {
+    const principles = [
+      ['Recruitment first', 'We start with the hiring problem, the role and the business context — not with generic activity.'],
+      ['Practical technology', 'Technology should simplify work, connect information and reduce unnecessary operational friction.'],
+      ['Clear communication', 'Clients, candidates and teams need timely, useful communication throughout the process.'],
+      ['Built to improve', 'Processes, systems and workflows should get better as the business grows.']
+    ];
+    return <main>
+      <SiteHeader />
+      <section className="company-page-hero">
+        <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+          <div>
+            <div className="eyebrow">ABOUT TALENTPLEX</div>
+            <h1 className="display mt-5 max-w-4xl text-5xl font-semibold leading-[.96] sm:text-7xl">Recruitment at the core.<br/><span className="gradient-text">Technology around the work.</span></h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted">TalentPlex helps businesses hire better while building the technology, digital presence and operating systems that make staffing and recruitment easier to manage.</p>
+            <div className="mt-8"><CTA>Connect With Us</CTA></div>
+          </div>
+          <div className="company-hero-panel">
+            <div className="eyebrow">WHAT WE BELIEVE</div>
+            <h2 className="display mt-4 text-3xl font-semibold">Better hiring needs better systems behind it.</h2>
+            <p className="mt-4 text-muted">Recruitment is the business focus. Technology is how we simplify the workflow, connect teams and create better visibility across the operation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="company-section light">
+        <div className="container grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+          <div>
+            <div className="eyebrow">WHO WE ARE</div>
+            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">TalentPlex is built around hiring, operations and practical technology.</h2>
+          </div>
+          <div className="company-copy">
+            <p>Our primary focus is recruitment and staffing support across specialized, professional and operational roles.</p>
+            <p>We also understand that a staffing business is more than candidates and jobs. It runs on client relationships, lead generation, communication, workflows, reporting and systems that need to stay connected.</p>
+            <p>That is why TalentPlex combines recruitment experience with technology and digital capabilities — including NimbussOS, our product focused on simplifying staffing operations and workflows.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="company-section dark">
+        <div className="container">
+          <div className="eyebrow">MISSION · VISION · GOAL</div>
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            <article className="company-value-card"><span>MISSION</span><h3>Help businesses hire with greater clarity and confidence.</h3><p>Deliver focused recruitment support while making the process easier to manage for clients, candidates and teams.</p></article>
+            <article className="company-value-card"><span>VISION</span><h3>Make staffing operations simpler, more connected and easier to scale.</h3><p>Bring recruitment, business development and operational workflows together through better processes and practical technology.</p></article>
+            <article className="company-value-card"><span>GOAL</span><h3>Become a trusted partner across hiring and staffing operations.</h3><p>Support the people side of the business while building the systems that help teams work with more visibility and less friction.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="company-section light">
+        <div className="container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div>
+            <div className="eyebrow">NIMBUSSOS</div>
+            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">Simplifying the workflow behind staffing.</h2>
+            <p className="mt-5 text-muted">NimbussOS represents our product direction: bring the moving parts of staffing into one connected environment so teams can spend less time switching between disconnected tools.</p>
+            <a href="https://www.nimbussos.com/" target="_blank" rel="noopener noreferrer" className="company-nimbus-link mt-7 inline-flex items-center gap-2 font-semibold">Explore NimbussOS <span>↗</span></a>
+          </div>
+          <div className="company-nimbus-grid">
+            {['ATS & Candidate Workflows','CRM & Client Activity','Lead Generation & Outreach','Jobs & Submissions','Reporting & Visibility','Automation & Connected Workflows'].map((item)=><div key={item}>{item}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="company-section dark">
+        <div className="container">
+          <div className="eyebrow">HOW WE THINK</div>
+          <h2 className="display mt-4 max-w-3xl text-4xl font-semibold sm:text-6xl">Keep the work clear, practical and connected.</h2>
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {principles.map(([title,copy])=><article key={title} className="company-principle-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta section">
+        <div className="container text-center">
+          <div className="eyebrow">TALK TO TALENTPLEX</div>
+          <h2 className="display mx-auto mt-5 max-w-4xl text-5xl font-semibold sm:text-7xl">Hiring, staffing operations or technology — start with the business need.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-muted">Tell us what you are trying to improve and we will point the conversation in the right direction.</p>
+          <div className="mt-8"><CTA>Contact Us</CTA></div>
         </div>
       </section>
       <SiteFooter />
