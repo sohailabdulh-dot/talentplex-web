@@ -14,3 +14,9 @@ create table if not exists contact_submissions (
 );
 create index if not exists contact_submissions_created_at_idx on contact_submissions (created_at);
 create index if not exists contact_submissions_status_idx on contact_submissions (status);
+
+alter table contact_submissions add column if not exists company_size varchar(40);
+alter table contact_submissions add column if not exists referral_source varchar(80);
+alter table contact_submissions add column if not exists location_region varchar(160);
+alter table contact_submissions add column if not exists timeline varchar(40);
+alter table contact_submissions add column if not exists openings varchar(40);
