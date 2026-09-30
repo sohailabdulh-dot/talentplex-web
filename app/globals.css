@@ -1579,3 +1579,30 @@ header nav[aria-label="Primary"] a[href*="nimbussos.com"]:focus-visible {
     padding:12px;
   }
 }
+
+
+/* Improve hero recruitment label visibility. */
+.recruitment-brief-kicker {
+  color:#D9DCE3 !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-weight:600;
+}
+.recruitment-brief-kicker > span:first-child {
+  color:#C7CBD3 !important;
+}
+.hero-service-list {
+  color:#D5D8DE !important;
+  font-family:var(--font-inter),Inter,sans-serif;
+  font-weight:600;
+}
+.hero-service-list span {
+  color:#D5D8DE !important;
+}
+.recruitment-brief-step span {
+  color:#C1C5CD !important;
+}
+.recruitment-brief-main > span,
+.recruitment-brief-flow-head > span,
+.recruitment-brief-support span {
+  color:#B9BDC5 !important;
+}
