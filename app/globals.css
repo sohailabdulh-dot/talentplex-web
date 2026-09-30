@@ -571,3 +571,34 @@ header nav[aria-label="Primary"] .cta-primary:hover { background:#B20F17 !import
   .contact-hero { padding-top:132px !important; }
   .footer-tagline { gap:6px 14px; }
 }
+
+
+/* Final footer alignment and global contact CTA cleanup. */
+.footer-brand {
+  line-height:1;
+}
+.footer-brand .display {
+  white-space:nowrap;
+}
+.footer-tagline {
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  gap:18px !important;
+  align-items:center !important;
+  margin-top:14px !important;
+}
+footer .container:first-child > div:first-child {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+header nav[aria-label="Primary"] .cta-primary {
+  min-width:122px;
+  justify-content:center;
+}
+@media (max-width:700px) {
+  .footer-tagline {
+    flex-wrap:wrap !important;
+    gap:8px 14px !important;
+  }
+}
