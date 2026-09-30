@@ -1320,3 +1320,41 @@ header nav[aria-label="Primary"] .nimbussos-nav:focus-visible {
   .talent-solution-dark-card,
   .talent-solution-step { min-height:auto; }
 }
+
+
+/* Header active navigation and subtle brand glow. */
+.site-header-shell {
+  background:
+    radial-gradient(circle at 78% 50%,rgba(227,19,27,.10),transparent 28%),
+    linear-gradient(90deg,rgba(13,14,16,.92),rgba(23,24,27,.90) 60%,rgba(43,10,14,.90));
+}
+header nav[aria-label="Primary"] .nav-link {
+  position:relative;
+}
+header nav[aria-label="Primary"] .nav-active {
+  color:#fff !important;
+  font-weight:700;
+}
+header nav[aria-label="Primary"] .nav-active::after {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-15px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#E3131B,#FF2935);
+  box-shadow:0 0 14px rgba(255,41,53,.38);
+}
+header .header-cta-active {
+  box-shadow:0 0 0 2px rgba(255,255,255,.18),0 0 24px rgba(227,19,27,.32);
+}
+/* NimbussOS stays a neutral external product link in the main nav. */
+header nav[aria-label="Primary"] a[href*="nimbussos.com"] {
+  color:#B8BAC1 !important;
+  font-weight:600;
+}
+header nav[aria-label="Primary"] a[href*="nimbussos.com"]:hover,
+header nav[aria-label="Primary"] a[href*="nimbussos.com"]:focus-visible {
+  color:#fff !important;
+}
