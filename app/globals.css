@@ -1546,3 +1546,36 @@ header nav[aria-label="Primary"] a[href*="nimbussos.com"]:focus-visible {
     font-size:22px;
   }
 }
+
+
+/* Normal-zoom recruitment hero sizing. */
+.recruitment-brief-visual {
+  aspect-ratio:auto !important;
+  overflow:visible !important;
+  min-height:0 !important;
+}
+.recruitment-brief-visual > .relative {
+  height:auto !important;
+  min-height:0 !important;
+}
+.recruitment-brief-support {
+  margin-bottom:0;
+}
+@media (min-width:1024px) and (max-width:1440px) {
+  .recruitment-brief-visual {
+    max-width:500px !important;
+  }
+  .recruitment-brief-main {
+    padding:18px;
+  }
+  .recruitment-brief-main h3 {
+    font-size:23px;
+  }
+  .recruitment-brief-flow {
+    padding:16px 18px 18px;
+  }
+  .recruitment-brief-support > div {
+    min-height:76px;
+    padding:12px;
+  }
+}
