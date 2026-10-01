@@ -58,27 +58,6 @@ const seoDescriptions: Record<string, string> = {
   privacy: 'Read the TalentPlex Global LLC privacy statement.',
 };
 
-const seoKeywords: Record<string, string[]> = {
-  'services/recruitment': [
-    'direct hire',
-    'contract staffing',
-    'contract-to-hire',
-    'executive search',
-    'RPO',
-    'cost-effective recruitment',
-    'engineering recruitment',
-    'manufacturing staffing',
-    'construction recruitment',
-    'automotive recruitment',
-    'energy staffing',
-    'supply chain recruitment',
-    'technology staffing',
-    'finance recruitment',
-    'healthcare recruitment',
-  ],
-  'services/technology': ['custom software', 'website development', 'SaaS development', 'workflow automation', 'recruitment technology'],
-  'services/digital': ['UI UX design', 'brand experience', 'digital experience', 'creative design', 'campaign design'],
-};
 
 export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata {
   const key = params.slug.join('/');
@@ -90,7 +69,6 @@ export function generateMetadata({ params }: { params: { slug: string[] } }): Me
   return {
     title,
     description,
-    keywords: seoKeywords[key],
     alternates: { canonical },
     robots: { index: true, follow: true },
     openGraph: {
