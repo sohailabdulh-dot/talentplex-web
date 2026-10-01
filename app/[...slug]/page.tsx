@@ -6,7 +6,7 @@ const pages: Record<string, { eyebrow: string; title: React.ReactNode; copy: str
   services: { eyebrow: 'SERVICES', title: 'Recruitment first. Technology and digital when they help the business move.', copy: 'TalentPlex leads with recruitment and staffing services, supported by technology and digital capabilities where they solve a practical business need.', items: ['Recruitment Services', 'Technology', 'Digital'], process: ['Understand', 'Plan', 'Execute', 'Review', 'Improve'] },
   'services/digital': { eyebrow: 'DIGITAL SERVICES', title: 'Experience and creative direction for businesses ready to move.', copy: 'We shape the UX, UI, brand experience and campaign moments that make businesses clearer, more credible and easier to choose.', items: ['UI/UX Design', 'Brand Experience', 'Digital Experience', 'Creative Design', 'Landing / Campaign Experiences'], process: ['Strategy', 'UX', 'Design', 'Creative', 'Launch', 'Optimize'], kind: 'light' },
   'services/technology': { eyebrow: 'TECHNOLOGY SERVICES', title: 'Technology built around how you work.', copy: 'Modern websites, software products and connected systems designed around real business workflows.', items: ['Website Design & Development', 'Custom Software', 'SaaS / Web Apps', 'Automation', 'Recruitment Technology'], process: ['Discover', 'Architect', 'Prototype', 'Build', 'Integrate', 'Deploy', 'Improve'], kind: 'diagram' },
-  'services/recruitment': { eyebrow: 'RECRUITMENT SERVICES', title: 'Talent that moves business forward.', copy: 'TalentPlex supports businesses with direct hire, contract staffing, executive search and recruitment support across the industries we know best.', items: ['Direct Hire', 'Contract Staffing', 'Contract-to-Hire', 'Executive Search', 'RPO / Recruitment Support'], process: ['Requirement', 'Search', 'Screen', 'Present', 'Interview', 'Offer', 'Hire'] },
+  'services/recruitment': { eyebrow: 'RECRUITMENT SERVICES', title: 'Talent that moves business forward.', copy: 'Cost-effective, flexible recruitment support for direct hire, contract staffing, contract-to-hire, executive search and RPO across engineering, manufacturing, construction, automotive, energy, supply chain, technology, finance and other professional sectors.', items: ['Direct Hire', 'Contract Staffing', 'Contract-to-Hire', 'Executive Search', 'RPO / Recruitment Support'], process: ['Requirement', 'Search', 'Screen', 'Present', 'Interview', 'Offer', 'Hire'] },
   'services/recruitment-websites': { eyebrow: 'RECRUITMENT WEBSITE DESIGN', title: 'Websites built for recruitment businesses.', copy: 'We combine staffing experience with modern design and development to build websites around employers, candidates, jobs and real recruitment workflows.', items: ['Career Pages', 'Job Search', 'Job Detail Pages', 'Resume Upload', 'Employer Lead Capture', 'Candidate Registration', 'Recruiter Profiles', 'Job Alerts', 'ATS Integration', 'CRM Integration', 'Analytics', 'SEO Structure'], process: ['Visitor', 'Employer / Candidate', 'Lead / Application', 'ATS / CRM', 'Recruiter / BDM', 'Interview', 'Placement'], kind: 'light' },
   solutions: { eyebrow: 'TALENT SOLUTIONS', title: 'Build the business around the talent operation.', copy: 'Launch, generate demand and run recruitment operations with connected support across brand, lead generation, outreach and NimbussOS.', items: ['Staffing Business Launch', 'Lead Generation & Outbound', 'Recruitment Operations', 'NimbussOS'] },
   'solutions/custom-software': { eyebrow: 'CUSTOM SOFTWARE', title: <>Your software should fit your business.<br /><span className="gradient-text">Not the other way around.</span></>, copy: 'TalentPlex develops custom systems when standard software cannot match the way a business operates.', items: ['Custom CRM', 'ATS', 'Business Operations Platform', 'Client Portal', 'Candidate Portal', 'Workflow System', 'Reporting Platform', 'Internal Application', 'SaaS Platform', 'AI-Assisted Application'], process: ['Discovery', 'Workflow mapping', 'Architecture', 'UX', 'Development', 'Integration', 'QA', 'Deployment', 'Support'], kind: 'diagram' },
@@ -24,8 +24,91 @@ const pages: Record<string, { eyebrow: string; title: React.ReactNode; copy: str
 
 const recruitmentIndustries = ['Engineering', 'Manufacturing', 'Construction', 'Automotive', 'Energy', 'Supply Chain & Logistics', 'Technology', 'Finance & Accounting', 'Healthcare', 'Professional Services'];
 
-const seoTitles: Record<string, string> = { services: 'Services', solutions: 'Talent Solutions', 'services/digital': 'Digital Services', 'services/technology': 'Technology Services', 'services/recruitment': 'Recruitment Services', 'services/recruitment-websites': 'Recruitment Website Design', 'solutions/custom-software': 'Custom Software Development', 'solutions/recruitment-technology': 'Recruitment Technology Solutions', 'solutions/staffing-launch': 'Staffing Business Launch', 'solutions/automation': 'Workflow Automation', 'products/nimbussos': 'NimbussOS — Recruitment Operating System', contact: 'Contact TalentPlex', privacy: 'Privacy Statement' };
-export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata { const key = params.slug.join('/'); const page = pages[key] ?? pages.services; const title = seoTitles[key] ?? (typeof page.title === 'string' ? page.title : 'TalentPlex'); return { title, description: page.copy, alternates: { canonical: `/${key}` }, openGraph: { title: `${title} | TalentPlex`, description: page.copy } }; }
+const seoTitles: Record<string, string> = {
+  services: 'Recruitment, Technology & Digital Services',
+  solutions: 'Talent Solutions for Staffing Businesses',
+  'services/digital': 'Digital Experience & Creative Services',
+  'services/technology': 'Technology Services & Custom Software',
+  'services/recruitment': 'Recruitment & Staffing Services',
+  'services/recruitment-websites': 'Recruitment Website Design',
+  'solutions/custom-software': 'Custom Software Development',
+  'solutions/recruitment-technology': 'Recruitment Technology Solutions',
+  'solutions/staffing-launch': 'Staffing Business Launch',
+  'solutions/automation': 'Workflow Automation Services',
+  company: 'About TalentPlex Global',
+  work: 'TalentPlex Work & Product Concepts',
+  contact: 'Contact TalentPlex Global',
+  privacy: 'Privacy Statement',
+};
+
+const seoDescriptions: Record<string, string> = {
+  services: 'Recruitment-first business services from TalentPlex Global, with staffing, technology and digital support built around practical growth needs.',
+  solutions: 'Launch, grow and operate a modern staffing business with support across lead generation, outbound, recruitment operations, automation and NimbussOS.',
+  'services/digital': 'UI/UX, brand experience, digital experience, creative design and campaign support from TalentPlex Global.',
+  'services/technology': 'Website development, custom software, SaaS, automation and recruitment technology built around real business workflows.',
+  'services/recruitment': 'Direct hire, contract staffing, contract-to-hire, executive search and RPO across engineering, manufacturing, construction, automotive, energy, supply chain, technology, finance and more.',
+  'services/recruitment-websites': 'Recruitment website design with employer journeys, candidate journeys, job search, resume intake, ATS integration, CRM integration and analytics.',
+  'solutions/custom-software': 'Custom CRM, ATS, portals, workflow systems, reporting platforms, SaaS products and internal applications built around your operation.',
+  'solutions/recruitment-technology': 'Recruitment technology connecting leads, clients, jobs, candidates, submissions, interviews, placements, reporting and automation.',
+  'solutions/staffing-launch': 'Launch a staffing business with support for brand, website, email, ATS, CRM, lead generation, workflows, reporting and automation.',
+  'solutions/automation': 'Workflow automation for lead routing, CRM, ATS, email, reporting, data sync, API integration and AI-assisted processes.',
+  company: 'Learn about TalentPlex Global LLC, a recruitment-first company supporting direct hire, contract staffing, technology and digital operations.',
+  work: 'Explore TalentPlex product, recruitment and staffing system concepts, including NimbussOS.',
+  contact: 'Contact TalentPlex Global for direct hire, contract staffing, executive search, recruitment support, technology or digital services.',
+  privacy: 'Read the TalentPlex Global LLC privacy statement.',
+};
+
+const seoKeywords: Record<string, string[]> = {
+  'services/recruitment': [
+    'direct hire',
+    'contract staffing',
+    'contract-to-hire',
+    'executive search',
+    'RPO',
+    'cost-effective recruitment',
+    'engineering recruitment',
+    'manufacturing staffing',
+    'construction recruitment',
+    'automotive recruitment',
+    'energy staffing',
+    'supply chain recruitment',
+    'technology staffing',
+    'finance recruitment',
+    'healthcare recruitment',
+  ],
+  'services/technology': ['custom software', 'website development', 'SaaS development', 'workflow automation', 'recruitment technology'],
+  'services/digital': ['UI UX design', 'brand experience', 'digital experience', 'creative design', 'campaign design'],
+};
+
+export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata {
+  const key = params.slug.join('/');
+  const page = pages[key] ?? pages.services;
+  const title = seoTitles[key] ?? (typeof page.title === 'string' ? page.title : 'TalentPlex Global');
+  const description = seoDescriptions[key] ?? page.copy;
+  const canonical = `/${key}`;
+
+  return {
+    title,
+    description,
+    keywords: seoKeywords[key],
+    alternates: { canonical },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: 'website',
+      url: canonical,
+      title: `${title} | TalentPlex Global`,
+      description,
+      siteName: 'TalentPlex Global',
+      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'TalentPlex Global' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | TalentPlex Global`,
+      description,
+      images: ['/opengraph-image'],
+    },
+  };
+}
 export function generateStaticParams() { return Object.keys(pages).map((slug) => ({ slug: slug.split('/') })); }
 
 export default function InnerPage({ params }: { params: { slug: string[] } }) {
