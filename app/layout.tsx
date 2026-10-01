@@ -1,17 +1,87 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
+const siteUrl = 'https://www.talentplexglobal.com';
+const siteName = 'TalentPlex Global';
+const defaultTitle = 'TalentPlex Global | Direct Hire, Contract Staffing & Recruitment Services';
+const defaultDescription = 'TalentPlex Global provides direct hire, contract staffing, executive search and recruitment support across engineering, manufacturing, construction, technology and more.';
+
 export const metadata: Metadata = {
-  title: { default: 'TalentPlex — Build. Hire. Grow.', template: '%s | TalentPlex' },
-  description: 'Technology, digital and recruitment for ambitious businesses.',
-  applicationName: 'TalentPlex',
-  metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: defaultTitle,
+    template: '%s | TalentPlex Global',
+  },
+  description: defaultDescription,
+  applicationName: siteName,
+  authors: [{ name: 'TalentPlex Global LLC', url: siteUrl }],
+  creator: 'TalentPlex Global LLC',
+  publisher: 'TalentPlex Global LLC',
+  category: 'Recruitment and Staffing',
+  alternates: {
+    canonical: '/',
+  },
+  keywords: [
+    'TalentPlex',
+    'TalentPlex Global',
+    'TalentPlex Global LLC',
+    'recruitment services',
+    'staffing services',
+    'direct hire',
+    'contract staffing',
+    'contract-to-hire',
+    'executive search',
+    'RPO',
+    'recruitment support',
+    'engineering recruitment',
+    'manufacturing staffing',
+    'construction recruitment',
+    'automotive recruitment',
+    'energy staffing',
+    'supply chain recruitment',
+    'logistics staffing',
+    'technology staffing',
+    'finance and accounting recruitment',
+    'healthcare recruitment',
+    'US staffing company',
+    'recruitment agency USA',
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
     type: 'website',
-    siteName: 'TalentPlex',
-    title: 'TalentPlex — Build. Hire. Grow.',
-    description: 'Technology, digital and recruitment for ambitious businesses.',
-    images: [{ url: '/brand/talentplex-og.svg', width: 1200, height: 630, alt: 'TalentPlex — Technology. Digital. Talent.' }],
+    locale: 'en_US',
+    url: siteUrl,
+    siteName,
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [{
+      url: '/opengraph-image',
+      width: 1200,
+      height: 630,
+      alt: 'TalentPlex Global — Recruitment, Staffing, Technology and Digital Services',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ['/opengraph-image'],
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
   },
   icons: {
     icon: [
@@ -23,11 +93,85 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: siteName,
+      alternateName: ['TalentPlex', 'TalentPlex Global LLC'],
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': ['Organization', 'EmploymentAgency'],
+      '@id': `${siteUrl}/#organization`,
+      name: siteName,
+      legalName: 'TalentPlex Global LLC',
+      alternateName: 'TalentPlex',
+      url: siteUrl,
+      logo: `${siteUrl}/brand/talentplex-logo-master.png`,
+      image: `${siteUrl}/opengraph-image`,
+      description: defaultDescription,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '5900 Balcones Drive, STE 100',
+        addressLocality: 'Austin',
+        addressRegion: 'TX',
+        postalCode: '78731',
+        addressCountry: 'US',
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'United States',
+      },
+      serviceType: [
+        'Direct Hire',
+        'Contract Staffing',
+        'Contract-to-Hire',
+        'Executive Search',
+        'Recruitment Process Outsourcing',
+        'Recruitment Support',
+      ],
+      knowsAbout: [
+        'Engineering Recruitment',
+        'Manufacturing Staffing',
+        'Construction Recruitment',
+        'Automotive Recruitment',
+        'Energy Staffing',
+        'Supply Chain and Logistics Recruitment',
+        'Technology Staffing',
+        'Finance and Accounting Recruitment',
+        'Healthcare Recruitment',
+        'Professional Services Recruitment',
+      ],
+      brand: {
+        '@type': 'Brand',
+        name: 'NimbussOS',
+        url: 'https://www.nimbussos.com/',
+      },
+    },
+  ],
+};
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  colorScheme: 'light',
+  colorScheme: 'light dark',
   themeColor: '#E3131B',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body>{children}</body></html>; }
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en-US">
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {children}
+      </body>
+    </html>
+  );
+}
