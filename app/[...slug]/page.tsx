@@ -626,7 +626,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
         </div>
       </section>
 
-      <section className="final-cta section">
+      <section className="final-cta section company-final-cta-light">
         <div className="container text-center">
           <div className="eyebrow">TALK TO TALENTPLEX</div>
           <h2 className="display mx-auto mt-5 max-w-4xl text-5xl font-semibold sm:text-7xl">Hiring, staffing operations or technology — start with the business need.</h2>
