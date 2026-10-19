@@ -616,7 +616,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
         </div>
       </section>
 
-      <section className="company-section dark">
+      <section className="company-section light company-principles-light">
         <div className="container">
           <div className="eyebrow">HOW WE THINK</div>
           <h2 className="display mt-4 max-w-3xl text-4xl font-semibold sm:text-6xl">Keep the work clear, practical and connected.</h2>
