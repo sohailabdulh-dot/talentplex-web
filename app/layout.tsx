@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import './brand.css';
 
 const siteUrl = 'https://www.talentplexglobal.com';
 const siteName = 'TalentPlex Global';
