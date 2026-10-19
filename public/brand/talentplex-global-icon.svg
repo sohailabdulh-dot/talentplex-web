@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title">
+<title id="title">TalentPlex Global icon</title>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD85A"/><stop offset="1" stop-color="#F4C430"/></linearGradient></defs>
+<circle cx="110" cy="110" r="96" fill="#0B0B0B"/>
+<path d="M110 14v192M14 110h192" stroke="#FAF9F6" stroke-width="13"/>
+<path d="M110 14c-38 22-59 60-59 96s21 74 59 96M110 14c38 22 59 60 59 96" fill="none" stroke="#FAF9F6" stroke-width="10"/>
+<path d="M110 110h96v96h-96z" fill="#FAF9F6"/>
+<path d="M123 206c7-40 33-72 83-83v83z" fill="url(#gold)"/>
+</svg>
