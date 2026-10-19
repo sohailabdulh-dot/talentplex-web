@@ -2214,3 +2214,84 @@ main#top .final-cta .gradient-text {
     padding-bottom:58px !important;
   }
 }
+
+
+/* Bright recruitment services and industries homepage sections. */
+main#top .capability-home-section {
+  background:
+    linear-gradient(180deg,#FFFFFF 0%,#FCFCFD 100%) !important;
+}
+main#top .capability-home-section .capability-card {
+  background:#FFFFFF !important;
+  color:#17181B !important;
+  border-color:#E3E4E8 !important;
+  box-shadow:0 12px 30px rgba(13,14,16,.06) !important;
+}
+main#top .capability-home-section .capability-card:hover {
+  border-color:rgba(227,19,27,.24) !important;
+  box-shadow:0 18px 38px rgba(13,14,16,.09) !important;
+}
+main#top .capability-home-section .capability-label,
+main#top .capability-home-section .capability-arrow {
+  color:#5B5E66 !important;
+}
+main#top .capability-home-section .capability-card h3 {
+  color:#17181B !important;
+}
+main#top .capability-home-section .capability-card p {
+  color:#5B5E66 !important;
+}
+main#top .capability-home-section .capability-card .tag {
+  color:#4B4E55 !important;
+  background:#FAFAFA !important;
+  border-color:#E1E3E7 !important;
+}
+main#top .capability-home-section .capability-visual {
+  background:linear-gradient(135deg,#FFF2F3,#F7F7F8) !important;
+  border-color:#F0DCDD !important;
+}
+main#top .capability-home-section .capability-visual span:first-child {
+  background:#E3131B !important;
+}
+main#top .capability-home-section .capability-visual span:nth-child(2) {
+  background:#F4A6AB !important;
+}
+main#top .capability-home-section .capability-visual i {
+  background:#F7D7D9 !important;
+}
+
+/* Industries: replace the full black block with a soft warm section. */
+main#top .recruitment-industries-section {
+  background:
+    radial-gradient(circle at 85% 18%,rgba(227,19,27,.08),transparent 26%),
+    linear-gradient(180deg,#FFF8F8 0%,#F8F8F9 100%) !important;
+  color:#17181B !important;
+  border-top:1px solid #ECEDEF !important;
+  border-bottom:1px solid #ECEDEF !important;
+}
+main#top .recruitment-industries-section .eyebrow {
+  color:#B20F17 !important;
+}
+main#top .recruitment-industries-section h2 {
+  color:#17181B !important;
+}
+main#top .recruitment-industries-section .text-muted {
+  color:#5B5E66 !important;
+}
+main#top .recruitment-industry-card {
+  background:#FFFFFF !important;
+  color:#25262A !important;
+  border-color:#E2E4E8 !important;
+  box-shadow:0 8px 20px rgba(13,14,16,.045);
+}
+main#top .recruitment-industry-card:hover {
+  background:#FFF3F4 !important;
+  border-color:rgba(227,19,27,.34) !important;
+  box-shadow:0 12px 26px rgba(13,14,16,.07);
+}
+main#top .recruitment-industry-more {
+  background:linear-gradient(135deg,#FFF2F3,#FFFFFF) !important;
+}
+main#top .recruitment-industry-more span {
+  color:#62656D !important;
+}
