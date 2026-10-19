@@ -579,7 +579,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
         <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div>
             <div className="eyebrow">ABOUT TALENTPLEX</div>
-            <h1 className="display mt-5 max-w-4xl text-5xl font-semibold leading-[.96] sm:text-7xl">Recruitment at the core.<br/><span className="gradient-text">Technology around the work.</span></h1>
+            <h1 className="display mt-5 max-w-4xl text-5xl font-semibold leading-[.96] sm:text-7xl">Recruitment at the core.<br/><span className="company-hero-highlight">Technology around the work.</span></h1>
             <p className="mt-6 max-w-2xl text-lg text-muted">TalentPlex helps businesses hire better while building the technology, digital presence and operating systems that make staffing and recruitment easier to manage.</p>
             <div className="mt-8"><CTA>Connect With Us</CTA></div>
           </div>
@@ -587,20 +587,6 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
             <div className="eyebrow">WHAT WE BELIEVE</div>
             <h2 className="display mt-4 text-3xl font-semibold">Better hiring needs better systems behind it.</h2>
             <p className="mt-4 text-muted">Recruitment is the business focus. Technology is how we simplify the workflow, connect teams and create better visibility across the operation.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="company-section light">
-        <div className="container grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
-          <div>
-            <div className="eyebrow">WHO WE ARE</div>
-            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">TalentPlex is built around hiring, operations and practical technology.</h2>
-          </div>
-          <div className="company-copy">
-            <p>Our primary focus is recruitment and staffing support across specialized, professional and operational roles.</p>
-            <p>We also understand that a staffing business is more than candidates and jobs. It runs on client relationships, lead generation, communication, workflows, reporting and systems that need to stay connected.</p>
-            <p>That is why TalentPlex combines recruitment experience with technology and digital capabilities — including NimbussOS, our product focused on simplifying staffing operations and workflows.</p>
           </div>
         </div>
       </section>
