@@ -3044,3 +3044,30 @@ header .mobile-nav-overlay nav[aria-label="Mobile"] .text-brandBright{
 }
 
 /* redeploy-brand-refresh-2026-10-19 */
+
+
+/* Hiring model tabs: yellow hover, keyboard focus and persistent selected state. */
+main#top .build-selector-section .build-tab {
+  cursor:pointer;
+  transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease,transform .2s ease;
+}
+main#top .build-selector-section .build-tab:not(.tab-active):hover,
+main#top .build-selector-section .build-tab:not(.tab-active):focus-visible {
+  background:linear-gradient(135deg,#FFF2B3,#F4C430) !important;
+  border-color:#E0B51E !important;
+  color:#0B0B0B !important;
+  box-shadow:0 8px 24px rgba(224,181,30,.22) !important;
+  transform:translateY(-2px);
+}
+main#top .build-selector-section .build-tab:not(.tab-active):hover .text-mist,
+main#top .build-selector-section .build-tab:not(.tab-active):focus-visible .text-mist {
+  color:#544000 !important;
+}
+main#top .build-selector-section .build-tab.tab-active {
+  background:linear-gradient(135deg,#F4C430,#E0B51E) !important;
+  border-color:#E0B51E !important;
+  color:#0B0B0B !important;
+}
+main#top .build-selector-section .build-tab.tab-active .text-mist {
+  color:#544000 !important;
+}
