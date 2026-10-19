@@ -3202,3 +3202,26 @@ main#top .build-selector-section > .container > .eyebrow {
 .company-final-cta-light h2 { color:#17181B !important; }
 .company-final-cta-light .text-muted { color:#555B65 !important; }
 .company-final-cta-light .eyebrow { color:#AE8200 !important; }
+
+/* Contact form: readable selection controls on light background */
+.contact-form-panel .text-mist,
+.contact-form-panel > p,
+.contact-form-panel form span {
+  color:#4B5563 !important;
+}
+.contact-form-panel button[type="button"] {
+  background:#FFFFFF !important;
+  color:#202124 !important;
+  border:1px solid #D9DCE1 !important;
+}
+.contact-form-panel button[type="button"]:hover {
+  background:#FFF9E6 !important;
+  color:#17181B !important;
+  border-color:#E0B51E !important;
+}
+.contact-form-panel button[type="button"].border-brand {
+  background:#FFF0B3 !important;
+  color:#17181B !important;
+  border-color:#D4A600 !important;
+  font-weight:600;
+}
