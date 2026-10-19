@@ -60,11 +60,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.png?v=5', type: 'image/png' },
-      { url: '/favicon.svg?v=5', type: 'image/svg+xml' },
+      { url: '/brand/talentplex-global-icon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon.png?v=5',
-    apple: '/apple-touch-icon.png?v=5',
+    shortcut: '/brand/talentplex-global-icon.svg',
+    apple: '/brand/talentplex-global-icon.svg',
   },
 };
 
@@ -86,7 +85,7 @@ const structuredData = {
       legalName: 'TalentPlex Global LLC',
       alternateName: 'TalentPlex',
       url: siteUrl,
-      logo: `${siteUrl}/brand/talentplex-logo-master.png`,
+      logo: `${siteUrl}/brand/talentplex-global-logo.svg`,
       image: `${siteUrl}/opengraph-image`,
       description: defaultDescription,
       address: {
@@ -134,7 +133,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light dark',
-  themeColor: '#E3131B',
+  themeColor: '#F4C430',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
