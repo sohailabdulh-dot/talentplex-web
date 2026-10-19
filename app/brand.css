@@ -1,0 +1,370 @@
+/* TalentPlex Global authoritative brand layer
+   Loaded after globals.css so this file owns the final visual identity. */
+
+:root{
+  --tp-black:#0B0B0B;
+  --tp-charcoal:#252525;
+  --tp-charcoal-2:#343434;
+  --tp-white:#FFFFFF;
+  --tp-warm:#FAF9F6;
+  --tp-gold:#F4C430;
+  --tp-gold-deep:#D5A817;
+  --tp-gold-soft:#FFF5C7;
+  --tp-line:#E8E3D7;
+  --tp-muted:#66635D;
+  --brand:#D5A817;
+  --brandBright:#F4C430;
+  --ink:#0B0B0B;
+  --canvas:#FAF9F6;
+  --surface:#FFFFFF;
+  --muted:#66635D;
+}
+
+html{background:var(--tp-warm)}
+body{
+  background:var(--tp-warm)!important;
+  color:var(--tp-black)!important;
+}
+.text-muted,.text-mist{color:var(--tp-muted)!important}
+.eyebrow{color:#987500!important}
+.gradient-text{
+  background:linear-gradient(105deg,#0B0B0B 0%,#9C7900 48%,#F4C430 100%)!important;
+  background-clip:text!important;
+  -webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  color:transparent!important;
+}
+.cta-primary{
+  background:linear-gradient(135deg,#F7D24B,#E0B51E)!important;
+  color:#0B0B0B!important;
+  border:1px solid rgba(11,11,11,.08)!important;
+  box-shadow:0 10px 26px rgba(213,168,23,.24)!important;
+}
+.cta-primary:hover{
+  box-shadow:0 14px 34px rgba(213,168,23,.32)!important;
+}
+
+/* HEADER */
+.site-header-shell{
+  background:rgba(11,11,11,.96)!important;
+  border-color:rgba(255,255,255,.10)!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.18)!important;
+}
+.site-header-shell>a:first-child{
+  display:inline-flex!important;
+  align-items:center!important;
+  background:var(--tp-warm)!important;
+  padding:7px 11px!important;
+  border-radius:13px!important;
+}
+.site-header-shell>a:first-child img{
+  height:38px!important;
+  width:auto!important;
+}
+header nav[aria-label="Primary"] .nav-link,
+header nav[aria-label="Primary"] a[href*="nimbussos.com"]{
+  color:#D8D4CC!important;
+}
+header nav[aria-label="Primary"] .nav-link:hover,
+header nav[aria-label="Primary"] .nav-active,
+header nav[aria-label="Primary"] a[href*="nimbussos.com"]:hover{
+  color:var(--tp-gold)!important;
+}
+header nav[aria-label="Primary"] .nav-active::after{
+  background:var(--tp-gold)!important;
+  box-shadow:0 0 14px rgba(244,196,48,.34)!important;
+}
+header button[aria-label="Open navigation"]{
+  color:#fff!important;
+  border-color:rgba(255,255,255,.14)!important;
+}
+
+/* HEROES */
+.hero-section,
+.recruitment-page-hero,
+.technology-page-hero,
+.digital-page-hero,
+.inner-hero{
+  background:
+    radial-gradient(circle at 84% 16%,rgba(244,196,48,.15),transparent 28%),
+    linear-gradient(135deg,#FFFFFF 0%,#FAF9F6 64%,#FFF8DC 100%)!important;
+  color:var(--tp-black)!important;
+}
+.hero-section h1,
+.recruitment-page-hero h1,
+.technology-page-hero h1,
+.digital-page-hero h1,
+.inner-hero h1{color:var(--tp-black)!important}
+.hero-section .text-muted,
+.recruitment-page-hero .text-muted,
+.technology-page-hero .text-muted,
+.digital-page-hero .text-muted,
+.inner-hero .text-muted{color:#5D5A54!important}
+.hero-section a:not(.cta-primary),
+.recruitment-page-hero a:not(.cta-primary),
+.technology-page-hero a:not(.cta-primary),
+.digital-page-hero a:not(.cta-primary){
+  color:var(--tp-black)!important;
+  background:#fff!important;
+  border-color:#DAD5C8!important;
+}
+
+/* HOME */
+.capability-strip{
+  background:#FFF6CF!important;
+  border-color:#EEDB8A!important;
+}
+.capability-home-section{
+  background:#fff!important;
+  color:var(--tp-black)!important;
+}
+.capability-home-section .capability-card{
+  background:#fff!important;
+  color:var(--tp-black)!important;
+  border-color:var(--tp-line)!important;
+}
+.capability-home-section .capability-card h3{color:var(--tp-black)!important}
+.capability-home-section .capability-card p,
+.capability-home-section .capability-label,
+.capability-home-section .capability-arrow{color:#5E5B55!important}
+.capability-home-section .capability-card .tag{
+  color:#4D4A45!important;
+  border-color:#DED8CB!important;
+  background:#FCFBF7!important;
+}
+.capability-home-section .capability-visual{
+  background:linear-gradient(135deg,#FFF8DD,#FAF9F6)!important;
+  border-color:#EBDFAE!important;
+}
+.capability-home-section .capability-visual span:first-child{
+  background:linear-gradient(90deg,#D5A817,#F4C430)!important;
+}
+.capability-home-section .capability-visual span:nth-child(2){background:#E9D37A!important}
+.capability-home-section .capability-visual i{background:#F3E5A5!important}
+
+.recruitment-industries-section,
+.recruitment-detail-section.dark,
+.recruitment-engagement-section,
+.technology-detail-section.dark,
+.digital-detail-section.soft,
+.technology-process-section,
+.digital-process-section{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(244,196,48,.09),transparent 25%),
+    linear-gradient(180deg,#FFFBEA 0%,#F8F7F2 100%)!important;
+  color:var(--tp-black)!important;
+}
+.recruitment-industries-section h2,
+.recruitment-detail-section.dark h2,
+.recruitment-engagement-section h2,
+.technology-detail-section.dark h2,
+.digital-detail-section.soft h2,
+.technology-process-section h2,
+.digital-process-section h2{color:var(--tp-black)!important}
+
+.recruitment-industry-card,
+.recruitment-industry-detail,
+.recruitment-service-card,
+.recruitment-process-card,
+.engagement-card,
+.why-card,
+.technology-service-card,
+.technology-dark-card,
+.technology-focus-card,
+.technology-process-card,
+.digital-service-card,
+.digital-channel-card,
+.digital-focus-card,
+.digital-process-card,
+.digital-metric-grid>div{
+  background:#fff!important;
+  color:var(--tp-black)!important;
+  border-color:var(--tp-line)!important;
+  box-shadow:0 10px 28px rgba(11,11,11,.055)!important;
+}
+.recruitment-industry-card:hover,
+.recruitment-industry-detail:hover,
+.recruitment-service-card:hover,
+.recruitment-process-card:hover,
+.engagement-card:hover,
+.why-card:hover,
+.technology-service-card:hover,
+.technology-dark-card:hover,
+.technology-focus-card:hover,
+.technology-process-card:hover,
+.digital-service-card:hover,
+.digital-channel-card:hover,
+.digital-focus-card:hover,
+.digital-process-card:hover{
+  background:#FFF9E5!important;
+  border-color:rgba(213,168,23,.48)!important;
+}
+.recruitment-industry-detail h3,
+.recruitment-service-card h3,
+.recruitment-process-card h3,
+.engagement-card strong,
+.why-card h3,
+.technology-service-card h3,
+.technology-dark-card h3,
+.technology-focus-card h3,
+.technology-process-card h3,
+.digital-service-card h3,
+.digital-channel-card h3,
+.digital-focus-card h3,
+.digital-process-card h3{color:var(--tp-black)!important}
+.recruitment-industry-detail p,
+.recruitment-service-card p,
+.recruitment-process-card p,
+.engagement-card p,
+.why-card p,
+.technology-service-card p,
+.technology-dark-card p,
+.technology-focus-card p,
+.technology-process-card p,
+.digital-service-card p,
+.digital-channel-card p,
+.digital-focus-card p,
+.digital-process-card p{color:#615E58!important}
+
+.recruitment-hero-panel,
+.technology-hero-panel,
+.digital-hero-panel{
+  background:#fff!important;
+  color:var(--tp-black)!important;
+  border-color:var(--tp-line)!important;
+  box-shadow:0 20px 50px rgba(11,11,11,.08)!important;
+}
+.recruitment-hero-chip,
+.technology-hero-chip,
+.digital-hero-chip{
+  background:#FFF9E8!important;
+  border-color:#E8DDAE!important;
+  color:#2B2B2B!important;
+}
+.recruitment-service-card>span,
+.recruitment-process-card>span,
+.technology-service-card>span,
+.technology-process-card>span,
+.digital-service-card>span,
+.digital-process-card>span{color:#9A7600!important}
+.technology-service-card::before,
+.digital-service-card::before{
+  background:linear-gradient(90deg,#D5A817,#F4C430,transparent 72%)!important;
+}
+.technology-focus-card,
+.digital-focus-card{border-top-color:var(--tp-gold)!important}
+
+/* HOME DARK MOMENTS */
+.build-selector-section{
+  background:
+    radial-gradient(circle at 88% 68%,rgba(244,196,48,.14),transparent 28%),
+    linear-gradient(145deg,#0B0B0B,#202020 68%,#111 100%)!important;
+  color:#fff!important;
+}
+.build-selector-section h2{color:#fff!important}
+.build-selector-section .eyebrow,
+.build-selector-section .build-accent{
+  color:var(--tp-gold)!important;
+  -webkit-text-fill-color:var(--tp-gold)!important;
+}
+.build-selector-section .build-selector-intro{color:#D4D0C8!important}
+.build-selector-section .build-tab{
+  background:#1C1C1C!important;
+  color:#F3F1EB!important;
+  border-color:#3A3A3A!important;
+}
+.build-selector-section .build-tab.tab-active{
+  background:linear-gradient(135deg,#F4C430,#D5A817)!important;
+  color:#0B0B0B!important;
+  border-color:#F4C430!important;
+}
+.build-selector-section .build-tab.tab-active .text-mist{color:#0B0B0B!important}
+.build-selector-section .build-selector-panel{
+  background:#181818!important;
+  border-color:#393939!important;
+  color:#fff!important;
+}
+.build-selector-section .build-selector-panel h3{color:#fff!important}
+.build-selector-section .build-selector-panel p{color:#D4D0C8!important}
+
+.deep-plum{
+  background:
+    radial-gradient(circle at 88% 20%,rgba(244,196,48,.10),transparent 26%),
+    linear-gradient(135deg,#FFFFFF 0%,#FAF9F6 62%,#FFF8DE 100%)!important;
+  color:var(--tp-black)!important;
+}
+.deep-plum h2,.deep-plum p:not(.text-muted){color:var(--tp-black)!important}
+.deep-plum .text-muted{color:#615E58!important}
+.deep-plum .nimbuss-capabilities span{
+  background:#fff!important;
+  color:#3E3B36!important;
+  border-color:var(--tp-line)!important;
+}
+
+.final-cta{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(244,196,48,.18),transparent 32%),
+    linear-gradient(135deg,#0B0B0B,#202020 72%,#111)!important;
+  color:#fff!important;
+}
+.final-cta h2{color:#fff!important}
+.final-cta .eyebrow{color:var(--tp-gold)!important}
+.final-cta .text-muted{color:#D9D5CD!important}
+
+/* DIGITAL */
+.digital-page-hero,
+.digital-detail-section.light,
+.digital-detail-section.soft,
+.digital-process-section,
+.digital-measurement-section{
+  color:var(--tp-black)!important;
+}
+.digital-detail-section.light,
+.digital-measurement-section{background:#fff!important}
+.digital-detail-section .eyebrow,
+.digital-process-section .eyebrow,
+.digital-measurement-section .eyebrow{color:#987500!important}
+.digital-secondary-cta{
+  color:var(--tp-black)!important;
+  background:#fff!important;
+  border-color:#DAD5C8!important;
+}
+
+/* FOOTER */
+footer{
+  background:#0B0B0B!important;
+  color:#FAF9F6!important;
+  border-color:#2D2D2D!important;
+}
+.footer-logo-image{
+  width:270px!important;
+  max-width:100%!important;
+  height:auto!important;
+}
+footer .eyebrow{color:var(--tp-gold)!important}
+footer .footer-links a,
+footer .text-muted,
+footer .text-mist{color:#C8C4BC!important}
+footer .footer-links a:hover{color:var(--tp-gold)!important}
+
+/* MOBILE */
+.mobile-nav-overlay{
+  background:
+    radial-gradient(circle at 86% 8%,rgba(244,196,48,.12),transparent 26%),
+    #0B0B0B!important;
+  color:#fff!important;
+}
+.mobile-nav-top{
+  background:#0B0B0B!important;
+  border-color:rgba(255,255,255,.12)!important;
+}
+.mobile-nav-logo{
+  background:var(--tp-warm)!important;
+}
+.mobile-nav-overlay a{color:#fff!important}
+.mobile-nav-overlay .text-brandBright{color:var(--tp-gold)!important}
+
+@media (max-width:700px){
+  .site-header-shell>a:first-child img{height:34px!important}
+  .footer-logo-image{width:220px!important}
+}
