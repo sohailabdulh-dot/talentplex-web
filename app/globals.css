@@ -3086,3 +3086,12 @@ main#top .build-selector-section .build-selector-intro {
 main#top .build-selector-section > .container > .eyebrow {
   color:#F4C430 !important;
 }
+
+/* About page: accessible, high-contrast gold headline on dark background. */
+.company-page-hero .company-hero-highlight {
+  color:#F4C430 !important;
+  background:none !important;
+  -webkit-text-fill-color:#F4C430 !important;
+}
+.company-page-hero h1 { color:#FFFFFF !important; }
+.company-page-hero .text-muted { color:#D1D3D8 !important; }
