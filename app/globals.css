@@ -3071,3 +3071,18 @@ main#top .build-selector-section .build-tab.tab-active {
 main#top .build-selector-section .build-tab.tab-active .text-mist {
   color:#544000 !important;
 }
+
+/* Contrast fix: white section heading and supporting text on dark hiring selector. */
+main#top .build-selector-section h2,
+main#top .build-selector-section h2.display {
+  color:#FFFFFF !important;
+}
+main#top .build-selector-section h2 .build-accent {
+  color:#F4C430 !important;
+}
+main#top .build-selector-section .build-selector-intro {
+  color:#D6D6D6 !important;
+}
+main#top .build-selector-section > .container > .eyebrow {
+  color:#F4C430 !important;
+}
