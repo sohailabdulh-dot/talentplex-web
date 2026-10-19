@@ -3135,3 +3135,45 @@ main#top .build-selector-section > .container > .eyebrow {
 @media(min-width:768px) {
   .recruitment-industry-detail { min-height:145px !important; }
 }
+
+/* About Us and Contact Us: light backgrounds throughout */
+.company-page-hero.company-light-hero,
+.contact-hero {
+  background:linear-gradient(145deg,#FFFFFF 0%,#FFFDF4 100%) !important;
+  color:#17181B !important;
+}
+.company-page-hero.company-light-hero h1,
+.contact-hero h1,
+.contact-form-panel h2,
+.contact-company-card h2,
+.contact-office-title {
+  color:#17181B !important;
+}
+.company-page-hero.company-light-hero .text-muted,
+.contact-hero .text-muted,
+.contact-form-panel .text-muted,
+.contact-company-card .text-muted {
+  color:#505660 !important;
+}
+.contact-company-card,
+.contact-form-panel {
+  background:#FFFFFF !important;
+  border:1px solid #E5E0D5 !important;
+  box-shadow:0 15px 40px rgba(20,20,20,.06) !important;
+  color:#17181B !important;
+}
+.contact-form-panel .form-field {
+  background:#FFFFFF !important;
+  border-color:#D9DCE1 !important;
+  color:#17181B !important;
+}
+.contact-form-panel .form-field::placeholder { color:#707782 !important; }
+.contact-form-panel .form-field:focus { border-color:#E0B51E !important; }
+.contact-hero .gradient-text {
+  color:#B88700 !important;
+  -webkit-text-fill-color:#B88700 !important;
+}
+.company-section.company-principles-light {
+  background:#FFFDF7 !important;
+  color:#17181B !important;
+}
