@@ -2693,3 +2693,77 @@ main#top .recruitment-industry-more span {
   .digital-process-card { min-height:auto; }
   .digital-metric-grid { grid-template-columns:1fr; }
 }
+
+
+/* Force Digital Services into the approved light visual system. */
+.digital-page-hero {
+  background:
+    radial-gradient(circle at 82% 14%,rgba(227,19,27,.10),transparent 28%),
+    linear-gradient(135deg,#FFFFFF 0%,#FAF8F8 60%,#FFF1F2 100%) !important;
+  color:#17181B !important;
+}
+.digital-page-hero h1,
+.digital-page-hero p,
+.digital-page-hero .text-muted {
+  color:#17181B !important;
+}
+.digital-page-hero .text-muted {
+  color:#5B5E66 !important;
+}
+.digital-page-hero .digital-hero-panel {
+  background:#FFFFFF !important;
+  color:#17181B !important;
+  border-color:#E2E4E8 !important;
+}
+.digital-page-hero .digital-hero-chip {
+  background:#FAFAFA !important;
+  color:#25262A !important;
+  border-color:#E2E4E8 !important;
+}
+.digital-detail-section,
+.digital-detail-section.light,
+.digital-detail-section.soft,
+.digital-process-section,
+.digital-measurement-section {
+  color:#17181B !important;
+}
+.digital-detail-section.light {
+  background:#FFFFFF !important;
+}
+.digital-detail-section.soft {
+  background:
+    radial-gradient(circle at 86% 12%,rgba(227,19,27,.07),transparent 26%),
+    linear-gradient(180deg,#FFF8F8 0%,#F8F8F9 100%) !important;
+}
+.digital-process-section {
+  background:linear-gradient(180deg,#F8F8F9 0%,#FFF7F7 100%) !important;
+}
+.digital-measurement-section {
+  background:#FFFFFF !important;
+}
+.digital-detail-section h2,
+.digital-process-section h2,
+.digital-measurement-section h2,
+.digital-detail-section h3,
+.digital-process-section h3,
+.digital-measurement-section h3 {
+  color:#17181B !important;
+}
+.digital-service-card,
+.digital-channel-card,
+.digital-focus-card,
+.digital-process-card,
+.digital-metric-grid > div {
+  background:#FFFFFF !important;
+  color:#17181B !important;
+  border-color:#E2E4E8 !important;
+}
+.digital-service-card p,
+.digital-channel-card p,
+.digital-focus-card p,
+.digital-process-card p,
+.digital-detail-section .text-muted,
+.digital-process-section .text-muted,
+.digital-measurement-section .text-muted {
+  color:#5B5E66 !important;
+}
