@@ -207,6 +207,128 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
     </main>;
   }
 
+  if (key === 'services/digital') {
+    const digitalServices = [
+      ['SEO', 'Improve visibility where your customers are already searching.', 'Technical SEO, on-page optimization, content structure, local and service-page SEO, search performance tracking and ongoing improvement.'],
+      ['PAID MEDIA', 'Campaigns built around clear audiences, offers and conversion goals.', 'Google Ads, paid social, landing-page alignment, campaign setup, testing, optimization and performance reporting.'],
+      ['SOCIAL MEDIA', 'A consistent brand presence across the channels that matter.', 'Channel strategy, content planning, creative direction, post design, publishing support and campaign-led social content.'],
+      ['CONTENT MARKETING', 'Content that explains your value and supports demand generation.', 'Website content, service pages, articles, campaign copy, thought leadership, email content and sales-support assets.'],
+      ['EMAIL & OUTBOUND', 'Structured communication for prospects, clients and existing audiences.', 'Campaign planning, email sequences, newsletters, nurture flows, list segmentation and conversion-focused messaging.'],
+      ['CREATIVE & BRAND', 'Design systems that make campaigns and content feel consistent.', 'Campaign creative, social graphics, presentation assets, digital brand support and reusable visual systems.']
+    ];
+    const channels = [
+      ['Search', 'SEO and paid search programs built around intent, relevance and measurable actions.'],
+      ['Social', 'Organic and paid social content designed around the audience and platform.'],
+      ['Content', 'Useful content that supports visibility, credibility and sales conversations.'],
+      ['Email', 'Campaigns and nurture communication for leads, clients and existing audiences.'],
+      ['Landing Pages', 'Focused pages that connect campaigns to one clear next step.'],
+      ['Analytics', 'Clear tracking and reporting so decisions are based on actual performance.']
+    ];
+    const process = [
+      ['01', 'Understand the goal', 'We start with the audience, offer, business objective, existing channels and what success should look like.'],
+      ['02', 'Build the plan', 'We define priority channels, campaign structure, content requirements, conversion paths and measurement.'],
+      ['03', 'Create the assets', 'Messaging, landing pages, ads, content and creative are developed around the campaign objective.'],
+      ['04', 'Launch and distribute', 'Campaigns go live across the agreed channels with tracking and conversion points in place.'],
+      ['05', 'Measure performance', 'We review traffic, engagement, leads and campaign signals instead of relying on activity alone.'],
+      ['06', 'Improve continuously', 'We refine targeting, messaging, creative, pages and spend based on what the data shows.']
+    ];
+    return <main>
+      <SiteHeader />
+      <section className="digital-page-hero">
+        <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+          <div>
+            <div className="eyebrow">DIGITAL SERVICES</div>
+            <h1 className="display mt-5 max-w-4xl text-5xl font-semibold leading-[.96] sm:text-7xl">Digital marketing built to help your business <span className="gradient-text">get found and grow.</span></h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted">SEO, paid media, social media, content, email and campaign creative brought together around clear business goals.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="/contact" className="cta-primary inline-flex h-12 items-center gap-3 rounded-xl px-5 text-sm font-semibold text-white">Discuss Digital Marketing <span>↗</span></a>
+              <a href="#digital-services" className="digital-secondary-cta inline-flex h-12 items-center gap-3 rounded-xl border px-5 text-sm font-semibold">Explore Services <span>↓</span></a>
+            </div>
+          </div>
+          <div className="digital-hero-panel">
+            <div className="eyebrow">WHAT WE SUPPORT</div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {['SEO','Google Ads','Social Media','Content Marketing','Email Campaigns','Creative & Landing Pages'].map((item)=><div key={item} className="digital-hero-chip">{item}</div>)}
+            </div>
+            <div className="mt-6 border-t border-black/10 pt-5 text-sm text-muted">Strategy, execution, creative and measurement connected around the same growth objective.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="digital-services" className="digital-detail-section light">
+        <div className="container">
+          <div className="eyebrow">OUR DIGITAL SERVICES</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">The channels your customers use, connected to one clear strategy.</h2>
+          <p className="mt-5 max-w-3xl text-muted">We focus on practical digital marketing: improve visibility, create better campaign experiences and turn attention into meaningful business actions.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {digitalServices.map(([label,title,copy])=><article key={label} className="digital-service-card"><span>{label}</span><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="digital-detail-section soft">
+        <div className="container grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+          <div>
+            <div className="eyebrow">CHANNELS & EXECUTION</div>
+            <h2 className="display mt-4 max-w-3xl text-4xl font-semibold sm:text-6xl">Be visible where the buying journey actually happens.</h2>
+            <p className="mt-5 max-w-2xl text-muted">Different channels play different roles. We connect search, content, social, email and landing pages so the experience feels intentional rather than fragmented.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {channels.map(([title,copy])=><article key={title} className="digital-channel-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="digital-detail-section light">
+        <div className="container">
+          <div className="eyebrow">SEO & SEARCH VISIBILITY</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">Build search visibility around what your customers are looking for.</h2>
+          <p className="mt-5 max-w-3xl text-muted">SEO is treated as an ongoing growth channel — combining technical foundations, useful pages, search intent, internal structure and performance data.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              ['Technical SEO','Crawlability, indexing, metadata, site structure, performance and technical search foundations.'],
+              ['On-page & Content SEO','Service pages, landing pages, search intent, content structure and internal linking.'],
+              ['Measurement & Improvement','Search Console, analytics, keyword movement, landing-page performance and ongoing refinement.']
+            ].map(([title,copy])=><article key={title} className="digital-focus-card"><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="digital-process-section">
+        <div className="container">
+          <div className="eyebrow">HOW WE WORK</div>
+          <h2 className="display mt-4 max-w-4xl text-4xl font-semibold sm:text-6xl">Strategy first. Execution next. Improvement always.</h2>
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
+            {process.map(([number,title,copy])=><article key={number} className="digital-process-card"><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="digital-measurement-section">
+        <div className="container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div>
+            <div className="eyebrow">MEASUREMENT</div>
+            <h2 className="display mt-4 text-4xl font-semibold sm:text-6xl">Marketing should be easier to understand.</h2>
+            <p className="mt-5 max-w-2xl text-muted">We organize reporting around the signals that matter to the campaign: visibility, traffic, engagement, leads, conversions and cost efficiency where applicable.</p>
+          </div>
+          <div className="digital-metric-grid">
+            {['Visibility','Qualified Traffic','Engagement','Leads','Conversions','Campaign Efficiency'].map((item)=><div key={item}>{item}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta section">
+        <div className="container text-center">
+          <div className="eyebrow">READY TO GROW YOUR DIGITAL PRESENCE?</div>
+          <h2 className="display mx-auto mt-5 max-w-4xl text-5xl font-semibold sm:text-7xl">Tell us what you want digital marketing to achieve.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-muted">More visibility, better campaigns, stronger content or more qualified leads — we&apos;ll start with the goal and build from there.</p>
+          <div className="mt-8"><CTA>Discuss Digital Marketing</CTA></div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>;
+  }
+
   if (key === 'services/technology') {
     const technologyServices = [
       ['WEBSITE DESIGN & DEVELOPMENT', 'Custom websites built around your brand, audience and business goals.', 'Corporate websites, recruitment websites, landing pages and web experiences designed for clarity, credibility and conversion.'],
