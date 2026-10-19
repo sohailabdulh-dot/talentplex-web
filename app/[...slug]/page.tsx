@@ -575,7 +575,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
     ];
     return <main>
       <SiteHeader />
-      <section className="company-page-hero">
+      <section className="company-page-hero company-light-hero">
         <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div>
             <div className="eyebrow">ABOUT TALENTPLEX</div>
@@ -605,7 +605,7 @@ export default function InnerPage({ params }: { params: { slug: string[] } }) {
         </div>
       </section>
 
-      <section className="company-section dark">
+      <section className="company-section light company-principles-light">
         <div className="container">
           <div className="eyebrow">MISSION · VISION · GOAL</div>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
