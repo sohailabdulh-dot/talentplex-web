@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 240" role="img" aria-labelledby="title">
+<title id="title">TalentPlex Global reversed logo</title>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD85A"/><stop offset="1" stop-color="#F4C430"/></linearGradient></defs>
+<g transform="translate(20 20)">
+  <circle cx="100" cy="100" r="88" fill="#FAF9F6"/>
+  <path d="M100 12v176M12 100h176" stroke="#0B0B0B" stroke-width="12"/>
+  <path d="M100 12c-35 20-54 55-54 88s19 68 54 88M100 12c35 20 54 55 54 88" fill="none" stroke="#0B0B0B" stroke-width="9"/>
+  <path d="M100 100h88v88h-88z" fill="#0B0B0B"/>
+  <path d="M112 188c6-37 30-66 76-76v76z" fill="url(#gold)"/>
+</g>
+<g fill="#FAF9F6">
+  <text x="250" y="112" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" letter-spacing="3">TALENTPLEX</text>
+  <text x="255" y="170" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="500" letter-spacing="20">GLOBAL</text>
+</g>
+</svg>
